@@ -2228,6 +2228,7 @@ fieldset[disabled] .btn-warning.active {
   color: #ffffff;
   /*background-color: #d2322d;*/
   border-color: none;
+  opacity:0.8;
 }
 
 .btn-danger:active,
@@ -6232,6 +6233,7 @@ body.modal-open,
 
 .press.press-sm .carousel-inner {
   height: auto;
+  min-width:100%;
 }
 
 .press .carousel-inner {
@@ -6240,6 +6242,7 @@ body.modal-open,
   overflow: hidden;
   background: none;
   height: 200px;
+  padding: 0 1.7021%;
 }
 
 .press.press-sm.carousel .item {
@@ -6249,12 +6252,13 @@ body.modal-open,
 
 .press.carousel .item {
     height: 200px;
-    padding-left: 10%;
     overflow: hidden;
 }
 
 .press.press-sm.carousel .item ul.thumbnails {
+  overflow:hidden;
   margin-top: 10px;
+  max-width:auto;
 }
 
 .press.carousel .item ul.thumbnails {
@@ -6262,10 +6266,23 @@ body.modal-open,
   list-style-type: none;
   padding: 0;
   margin-bottom: 0;
+  text-align:center;
+  min-width:100%;
+  overflow:hidden;
+  max-width:auto;
 }
+
+.press.carousel .thumbnails li {
+  width:20%;
+  float:left;
+}
+
+
 
 .press.press-sm.carousel .item ul li {
   padding-left: 0;
+  width:40%;
+  float:left;
 }
 
 .press.carousel .item ul li .thumbnail img {
@@ -6274,14 +6291,14 @@ body.modal-open,
 
 .press.carousel .item ul li {
   text-align: center;
+  display:inline-block;
 }
 
 .press.carousel .item ul li h5 {
-    margin-left: auto;
-    margin-right: auto;
     max-width: 170px;
     text-align: center;
-    margin-top: 20px;
+    margin:20px auto;
+
 }
 
 .press.press-sm .carousel-control {
@@ -6292,17 +6309,19 @@ body.modal-open,
   font-size: 40px;
   color: #006ab2;
   text-align: left;
+  left:0;
   text-shadow: none;
   opacity: 1;
   filter: alpha(opacity=100);
 }
 
 .press.press-sm .carousel-control.left {
-  left: -35px;
+  margin-left:-15px;
 }
 
 .press.press-sm .carousel-control.right {
-  right: -5px;
+ left:auto;
+ right:0;
 }
 
 .press .carousel-control {
@@ -6574,6 +6593,8 @@ body.modal-open,
 @-ms-viewport {
   width: device-width;
 }
+
+/* MEDIA QUERIES */
 
 @media screen and (max-width: 400px) {
   @-ms-viewport {
@@ -7141,3 +7162,174 @@ td.visible-print {
     display: none !important;
   }
 }
+
+
+
+
+
+
+/*ADDED STYLES*/
+
+#features-list {
+  text-align:right;
+}
+#sub-nav {
+ padding-top:25px;
+}
+ #sub-nav p {
+  text-align:right;
+ }
+
+ #buy-button {
+  padding-top:15px;
+ }
+ #buy-button p {
+  text-align:right;
+ }
+ .whiteBox.slider-box {
+  padding:10px 5px 40px;
+ }
+ .whiteBox h3 {
+  font-size:24px;
+  text-align:center;
+  color:#323232;
+ }
+ .img-container img {
+    max-width:100%;
+ }
+
+
+
+@media screen and (max-width: 1023px) {
+/*  body {
+    background-color:red;
+  }*/
+
+  .press.carousel .thumbnails li {
+    width:25%;
+  }
+
+}
+@media screen and (max-width: 780px) {
+/*  body {
+    background-color:yellow;
+  }*/
+.prodInfo p, .prodInfo h4 {
+  min-width: 100%;
+  width: 100%;
+  float: left;
+  display: block;
+}
+
+
+  #features-list {
+   padding-top: 40px;
+    float:left;
+    margin:0 auto;
+    text-align:center;
+    width:100%;
+
+  }
+
+  #featured-description {
+    width:100%;
+  }
+}
+
+@media screen and (max-width: 760px) {
+/*  body {
+    background-color:blue;
+  }*/
+
+  .product-box{
+    position:relative;
+   float:left;
+  }
+  .product-box:nth-child(even){
+    clear:left;
+  }
+
+ .img-container, .teaser {
+  max-width:100% !important;
+ }
+ .img-container {
+  overflow:hidden;
+ }
+ .press.carousel .thumbnails li {
+   width:33.3333%;
+ }
+}
+
+@media screen and (max-width: 600px) {
+/*  body {
+      background-color:green;
+  }*/
+
+
+    #product-overview #header.col-xs-6{
+      width:100%;
+    }
+
+     #product-overview  #sub-nav.col-xs-6{
+      width:70% !important;
+      float:left;
+      text-align:left;
+    }
+
+      #product-overview #buy-button.col-xs-12{
+      width:20% !important;
+      float:left;
+      text-align:left;
+    }
+
+    #sub-nav p {
+      text-align:left;
+    }
+
+
+
+}
+
+
+@media screen and (max-width: 520px) {
+/*  body {
+    background-color:green;
+  }*/
+  .col-xs-12, .col-sm-6, .col-md-4, .col-lg-4{
+    width:100% !important;
+    float:left;
+   }
+   .press.carousel .thumbnails li {
+     width:50%;
+   }
+}
+
+@media screen and (max-width: 450px) {
+
+   #product-overview  #sub-nav.col-xs-6{
+    width:100% !important;
+    float:left;
+    text-align:center;
+  }
+
+    #product-overview #buy-button.col-xs-12{
+    width:100% !important;
+    position:relative;
+    margin:0 auto;
+    top:20px;
+    right:0;
+    padding-top:0;
+  }
+
+  .press.carousel .thumbnails li {
+    width:100%;
+  }
+
+
+
+
+
+
+/*  body {
+    background-color:yellow;
+  }*/}
