@@ -65,11 +65,15 @@ footer .socials {
 
 .more h3 {
   display: inline;
+  float:left;
+  margin:0 30px 30px 0;
+
 }
 
 .more a {
-  padding: 0 0 0 30px;
+  padding: 0 30px 0 0;
 }
+
 
 .services h2 {
   margin-top: 50px;
@@ -161,7 +165,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0070bc', end
   min-height: 235px;
 }
 
-.row.grey.services {
+.grey.services {
   padding: 0 40px;
 }
 
@@ -182,7 +186,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0070bc', end
 font-family: "AVMMetaOT-BookBold","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
-.grey.further ul { float: left; }
+.grey .further ul { float: left; }
 
 li.searchbar {
   display: none;
@@ -350,13 +354,10 @@ p.even {
 
 .more h3 {
     display: block;
+    float:none;
+    width:auto;
 }
 
-.more img { display: none; }
-
-.more a {
-    padding: 0 30px 0 0;
-}
 
 .services .liste1 {
   background: url('../../assets/img/service/service-thumb1.jpg') 0px 15px no-repeat;
@@ -551,7 +552,8 @@ p.even {
 
 .more h3 {
     display: block;
-}
+    width:100%;
+    }
 
 .navbar-collapse.in .navbar-nav > li > a {
   font-size: 20px;
