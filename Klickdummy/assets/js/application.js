@@ -76,8 +76,8 @@
         }, 3000)
       })
 
-    // carousel demo
-    $('.bs-docs-carousel-example').carousel()
+    // // carousel demo
+    // $('.bs-docs-carousel-example').carousel()
 })
 
 }(window.jQuery)
