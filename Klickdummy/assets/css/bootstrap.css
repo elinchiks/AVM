@@ -3868,7 +3868,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 
 .sidebar-nav p {
-  line-height: 1.2;
+  line-height: 1.3;
   margin: 0 0 20px 0;
 }
 
@@ -7075,6 +7075,7 @@ tr.hidden-lg {
 
 th.hidden-lg,
 td.hidden-lg {
+
   display: table-cell !important;
 }
 

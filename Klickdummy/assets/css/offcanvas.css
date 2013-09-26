@@ -161,7 +161,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0070bc', end
 
 .whiteBox {
   background: #fff;
-  padding: 10px 20px 20px 40px;
+  padding: 10px 20px 10px;
   margin-top:20px;
   margin-bottom: 40px;
   min-height: 235px;
@@ -256,7 +256,7 @@ li.searchbar {
 } 
 
 .flyout.open .dropdown-menu {
-  background: #fff;
+  background: #f8f8f8;
   border-radius: 0;
 }
 
@@ -379,7 +379,10 @@ li.searchbar {
  /*
   * ELEMENTS SPECIFIC TO PAGES
   */
-
+/* Home Page */
+  .more {
+    margin-top:5px;
+  }
 /* Service Page */
 
   #teaser-nav a {
@@ -513,8 +516,8 @@ li.searchbar {
     float:none;
    }
 
-   #additional-info.grey {
-     padding-top:20px;
+   #additional-info.services {
+     padding-top:50px;
    }
 
    #product-overview .whiteBox h3 {
@@ -544,21 +547,14 @@ li.searchbar {
    text-align:right;
   }
 
-  #sub-nav.col-xs-6 {
-      padding-top:5px;
-  }
+ 
 
   .press.carousel .thumbnails li {
    float:left;
   }
 
-
-  .whiteBox.slider-box {
-   padding:10px 5px 40px;
-  }
-
   #buy-button {
-   padding-top:5px;
+   padding-top:18px;
   }
 
   #buy-button p {
@@ -665,6 +661,10 @@ li.searchbar {
      display: block;
      width:100%;
      }
+
+  #more-products {
+    padding-top:30px;
+  }
 
  .navbar-collapse.in .navbar-nav > li > a {
    font-size: 20px;
@@ -935,10 +935,11 @@ li.searchbar {
        width:100%;
      }
 
-    #product-overview  #sub-nav.col-xs-6 {
+    #product-overview  #sub-nav{
      width:70% !important;
      float:left;
      text-align:left;
+     padding-top:5px;
    }
 
     #buy-button.col-xs-12 {
