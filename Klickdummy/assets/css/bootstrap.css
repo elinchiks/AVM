@@ -3710,6 +3710,7 @@ input[type="button"].btn-block {
 
 .input-group.search button {
   background: #fff url('../../assets/img/icons/icon-search.gif') 1px 5px no-repeat;
+  height:30px;
 }
 
 .input-group.col {
