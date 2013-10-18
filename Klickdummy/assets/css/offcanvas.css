@@ -2,6 +2,7 @@
  * Style tweaks
  * --------------------------------------------------
  */
+
 body {
   padding-top: 0px;
 }
@@ -751,6 +752,8 @@ li.searchbar {
 }
 .filter-trigger {
   display:block;
+  height:30px;
+  overflow:hidden;
   width:auto;
   float:left;
   position:relative;
@@ -764,8 +767,12 @@ li.searchbar {
 .filter-trigger a {
   display:block;
   width:100%;
-  height:100%;
-  padding: 4px 20px;
+  padding:0 20px;
+  height:30px;
+  line-height:30px;
+  white-space: normal;
+  overflow: hidden !important;
+  text-overflow: ellipsis;
 }
 
 .filter-data a {
