@@ -35,14 +35,14 @@ function initLightbox() {
     $lightboxClose = $('.lightbox-close');
 
     // Close callback
-    $lightboxClose.one('click', function(e){ 
+    $lightboxClose.on('click', function(e){ 
         closeLightbox();
         e.preventDefault();
         return false;
     });
-    $lightboxOverlay.one('click', closeLightbox);
+    // $lightboxOverlay.on('click', closeLightbox);
     
-    $(document).one('keyup', function(e) {
+    $(document).on('keyup', function(e) {
         if (e.keyCode == 27) { closeLightbox(); }   // esc
     });
 }
@@ -52,7 +52,7 @@ function openLightbox(data) {
     $lightboxOverlay = $('<div id="lightbox-overlay"></div>');
     $lightboxDialog  = $('<div id="lightbox-dialog"><a href="#" id="lightbox-close" class="lightbox-close">Close</a></div>');
 
-    $wrapper.append($lightboxOverlay)
+    $('body').append($lightboxOverlay)
             .append($lightboxDialog);
     
     $lightboxOverlay.animate({ opacity: '0.6' }, 200, 'easeInOutQuad', function() {
@@ -63,7 +63,7 @@ function openLightbox(data) {
         initLightbox();
 
         $lightboxDialog.css({ opacity: '0', visibility: 'visible'  })
-                    .animate({ opacity: '1' }, 250, 'easeOutQuad', function() {
+                    .animate({ opacity: '1' }, 250, 'easeInOutQuad', function() {
                         isLoading = false;
                     });
     });
@@ -154,21 +154,7 @@ function openLightbox(data) {
             $('#current_page').val(page_num);  
         }  
 
-        function initMoreInfoBlock() {
-         $('.filter-trigger > a').on('click', function(e) {
-            console.log("Hello");
-
-            $button = $(this);
-            console.log($button);
-
-            // $moreInfo = $button.siblings('.more-info').html();
-
-            // openLightbox($moreInfo)
-
-            e.preventDefault();
-            return false;
-        });
-        }
+      
 
 
 
@@ -182,15 +168,7 @@ $(document).ready(function() {
     pagination();
 
 
-//triggering Overlay for mobile
 
-if ($("html").hasClass("desktop")) {
-
-console.log("Hello");
-
-
-
-}
 
 
 	links = $('.filterbar').find('.filter-data a');
@@ -212,11 +190,18 @@ console.log("Hello");
         	filterValue = $(this).text(); 
 
 
+
         	var filterParent= $(this).parents('.filter-data');
-        	var filterWrapper = $(this).parents('.filter-wrapper');
-        	var filterTrigger =  $(filterParent).prev('.filter-trigger');
-        	var filterLinkHolder = $(filterTrigger).find('a');
+         
+          dataId = $(filterParent).attr("id");
+          filterLinkHolder = $("a[data-parent='" + dataId +"']");
+          console.log(filterLinkHolder);
+        	var filterWrapper = $(filterLinkHolder).parents('.filter-wrapper');
+        	var filterTrigger =  $(filterLinkHolder).parents('.filter-trigger');
+        	// var filterLinkHolder = $(filterTrigger).find('a');
         	filterLinkHolder.text("" + filterValue + "" );
+
+       
 
 
 
@@ -245,10 +230,6 @@ console.log("Hello");
                         specific = a.getAttribute("data-specific").toUpperCase().indexOf(m[3].toUpperCase())>=0;
                         filterValues = hardware + problems + specific;
                         return (filterValues);
-
-                        // $('section:contains("ABC"):contains("DEF")');
-
-
         	        };
 
         	        function listFilter(list) {
@@ -341,7 +322,67 @@ console.log("Hello");
 
         });
     });
+//triggering Overlay for mobile
 
+if ($("html").hasClass("desktop")) {
+
+triggers = $('.filterbar').find('.filter-trigger a');
+console.log(triggers);
+$(triggers).each(function(i){
+  trigger = $(this);
+
+
+
+
+    trigger.click(function(e){
+      dataOverlay = $(this).parent().next('.filter-data');
+
+      parentId = $(this).attr("data-parent");
+      console.log(parentId);
+
+
+          openLightbox(dataOverlay);
+
+          e.preventDefault();
+
+
+console.log("Babe!");
+    });
+ });
+
+}
 
 });
  
+
+ // Custom Easing Extends
+ ////////////////////////////
+
+ $.extend($.easing,
+ {
+     def: 'easeOutQuad',
+     swing: function (x, t, b, c, d) {
+         return $.easing[$.easing.def](x, t, b, c, d);
+     },
+
+     easeInQuad: function (x, t, b, c, d) {
+         return c*(t/=d)*t + b;
+     },
+     easeOutQuad: function (x, t, b, c, d) {
+         return -c *(t/=d)*(t-2) + b;
+     },
+     easeInOutQuad: function (x, t, b, c, d) {
+         if ((t/=d/2) < 1) return c/2*t*t + b;
+         return -c/2 * ((--t)*(t-2) - 1) + b;
+     },
+     easeInCubic: function (x, t, b, c, d) {
+         return c*(t/=d)*t*t + b;
+     },
+     easeOutCubic: function (x, t, b, c, d) {
+         return c*((t=t/d-1)*t*t + 1) + b;
+     },
+     easeInOutCubic: function (x, t, b, c, d) {
+         if ((t/=d/2) < 1) return c/2*t*t*t + b;
+         return c/2*((t-=2)*t*t + 2) + b;
+     }
+ });
