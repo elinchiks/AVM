@@ -14,7 +14,7 @@ function releaseLightbox() {
     $(document).unbind('keyup');
 }
 
-function closeLightbox() {
+function closeLightbox(parent) {
 
     $lightboxDialog.animate({ opacity: '0' }, 200, 'easeInOutQuad', function(){
 
@@ -23,8 +23,9 @@ function closeLightbox() {
         });
         
         $lightboxDialog.remove();
+        overlayData = $lightboxDialog.find('.overlay-data');
+        $(parent).append(overlayData);
     });
-
     releaseLightbox();
 }
 
@@ -50,7 +51,7 @@ function initLightbox() {
 function openLightbox(data) {
     var scrollTop = 0;
     $lightboxOverlay = $('<div id="lightbox-overlay"></div>');
-    $lightboxDialog  = $('<div id="lightbox-dialog"><a href="#" id="lightbox-close" class="lightbox-close">Close</a></div>');
+    $lightboxDialog  = $('<div id="lightbox-dialog"><a href="#" id="lightbox-close" class="lightbox-close"></a></div>');
 
     $('body').append($lightboxOverlay)
             .append($lightboxDialog);
@@ -75,11 +76,11 @@ function openLightbox(data) {
 //////////////
 
 
-        function pagination() {
+        function pagination(countedResults, searchList) {
 
              var $pageNav = $('.search-nav'),
                  show_per_page = 6,
-                 number_of_items = $('#search-content ul').children().size(), 
+                 number_of_items = countedResults, 
                  number_of_pages = Math.ceil(number_of_items/show_per_page);
             
              //set the value of hidden input fields  
@@ -109,10 +110,10 @@ function openLightbox(data) {
               $pageNav.find('.page_link:first').addClass('active_page');  
             
              //hide all the elements inside content div  
-             $('#search-content ul').children().css('display', 'none');  
+             $(searchList).children().css('display', 'none');  
             
              //and show the first n (show_per_page) elements  
-             $('#search-content ul').children().slice(0, show_per_page).css('display', 'block');  
+             $(searchList).children().slice(0, show_per_page).css('display', 'block');  
         } 
 
         function previous(){
@@ -155,202 +156,233 @@ function openLightbox(data) {
         }  
 
       
+        // Defining function for content filter (defining filter values)
+        jQuery.expr[':'].Contains = function (a, i, m) {
+            // || a.textContent || a.innerText || ""
+           hardware = a.getAttribute("data-hardware").toUpperCase().indexOf(m[3].toUpperCase())>=0;
+            problems = a.getAttribute("data-problems").toUpperCase().indexOf(m[3].toUpperCase())>=0;
+            specific = a.getAttribute("data-specific").toUpperCase().indexOf(m[3].toUpperCase())>=0;
+            filterValues = hardware + problems + specific;
+            return (filterValues);
+        };
+
+
+        // Filtering the content, returning the matched results, styling the results
+        function listFilter(list, filterParent, filterValue) {
+                var filter = filterValue;
+
+                if (filter) {
+
+                    //checks the filter value, when "Alle Bereiche" is set, filtering is done without matching a value
+                    if(filter == "Alle Bereiche") {
+                        filter = '';
+                        
+                        $(list).find("a:not(:Contains(" + filter+ "))").parent().slideUp();
+
+                        
+                        var filteredList = $(list).find("a:Contains(" + filter + ")");
+                        var numberReturned = $(filteredList).length;
+
+                        
+
+
+                        //Loop through the filtered list and style the new list elements
+                        filteredList.css('background', '#fff');
+
+                        for ( var i=0; i < filteredList.length; i++ )
+                          {
+                            // do stuff with boxes[i]
+                            if ( ( (i+1) % 2 ) === 0 )
+                              {
+                                  $(filteredList[i]).css('background', '#f8f8f8');
+                                  // do stuff with the fourth item
+                              }
+                          }
+
+                        // writing the number returned 
+                        $('#search-header').find('.search-count span').text(numberReturned);
+                        $('#search-footer').find('.search-count span').text(numberReturned);
+        
+
+
+                        $(list).find("a:Contains(" + filter + ")").parent().slideDown();
+                        
+                        pagination(numberReturned, filteredList);
+                    
+
+                    } else {
+                        $(list).find("a:not(:Contains(" + filter + "))").parent().slideUp();
+
+                     
+                        var filteredList = $(list).find("a:Contains(" + filter + ")");
+                        var numberReturned = $(filteredList).length;
+
+                        
+
+
+                        //Loop through the filtered list and style the new list elements
+                        filteredList.css('background', '#fff');
+
+                        for ( var i=0; i < filteredList.length; i++ )
+                          {
+                            // do stuff with boxes[i]
+                            if ( ( (i+1) % 2 ) === 0 )
+                              {
+                                  $(filteredList[i]).css('background', '#f8f8f8');
+                                  // do stuff with the fourth item
+                              }
+                          }
+
+                        // writing the number returned 
+                        $('#search-header').find('.search-count span').text(numberReturned);
+                        $('#search-footer').find('.search-count span').text(numberReturned);
+                        // pagination(numberReturned);
 
 
 
+                        $(list).find("a:Contains(" + filter + ")").parent().slideDown();
+                        pagination(numberReturned,  filteredList);
+
+
+                    }
+                  
+                } else {
+                    $(list).find("li").slideDown();
+                }
+
+                return false;
+        
+        };
+
+        // Function is used to change the value of previous filters
+
+        function checkFilterState() {
+            triggers = $('.filterbar').find('.filter-trigger a');
+
+            $(triggers).each(function(i){
+
+                    triggeredFilter = $(this);
+
+                    triggeredFilter.click(function(e){
+
+                    filterParent = $(this).parents('.filter-wrapper');
+                    nextParent = $(filterParent).nextAll('.filter-wrapper');
+                    nextTrigger = $(nextParent).find('.filter-trigger');
+                    console.log( nextTrigger);
+                    
+
+                    if($(nextTrigger).length > 0){
+                        console.log(nextTrigger.length);
+                    $(nextTrigger).each(function(i){
+
+
+                    if($(this).hasClass('not-active')) {
+                        
+                    } else {
+                        $(this).addClass('not-active');
+                    }
+
+                    });
+                }
+
+                });
+            });
+
+        };
+
+
+        function filters(){
+
+            links = $('.filterbar').find('.filter-data a');
+
+            var filterValue;
+            $(links).each(function(i){
+
+                    triggeredFilter = $(this);
+
+                    triggeredFilter.click(function(e){
+                   
+                    e.preventDefault();
+                    filterValue = $(this).text(); 
+
+                    var filterParent= $(this).parents('.filter-data');
+
+                 
+                    dataId = $(filterParent).attr("id");
+                    filterLinkHolder = $("a[data-parent='" + dataId +"']");
+
+                    var filterWrapper = $(filterLinkHolder).parents('.filter-wrapper');
+                    var filterTrigger =  $(filterLinkHolder).parents('.filter-trigger');
+
+                    // var filterLinkHolder = $(filterTrigger).find('a');
+                    filterLinkHolder.text("" + filterValue + "" );
+
+
+
+                    //Activating the next filter
+                    $(filterWrapper).next('.filter-wrapper').find('.filter-trigger').removeClass('not-active');
+
+
+
+                    //Callback function which hides the filter data box after submitting the value
+                    // Callback function filters the content, based on filters submitted
+                    
+
+                    setTimeout(function () { 
+
+                      if($(filterParent).hasClass('overlay-data')) {
+                          closeLightbox(filterWrapper);
+                      }
+
+
+                        // Close filter data window 
+                        filterParent.removeClass('in');
+                        filterParent.addClass('collapse');
+                        checkFilterState();
+                    
+                          
+                        listFilter($("#search-content"), filterParent, filterValue);                     
+
+                    }, 500); 
+
+                });
+            });
+};
 
 //////////////
 // DOCUMENT READY 
 //////////////
 
 $(document).ready(function() {
+    number_of_items = $('#search-content ul').children().size();
+    searchList = $('#search-content ul');
+    pagination(number_of_items, searchList);
+    filters();
+    checkFilterState();
 
-    pagination();
 
+    //triggering Overlay for filters just for mobile
 
+    if ($("html").hasClass("mobile")) {
 
+        triggers = $('.filterbar').find('.filter-trigger a');
 
+        $(triggers).each(function(i){
+          trigger = $(this);
 
-	links = $('.filterbar').find('.filter-data a');
+            trigger.click(function(e){
+              dataOverlay = $(this).parent().next('.filter-data');
+              dataOverlay.addClass('overlay-data');
 
+              parentId = $(this).attr("data-parent");
+              console.log(parentId);
 
-    var filterValue;
-    $(links).each(function(i){
-    	triggeredFilter = $(this);
+                  openLightbox(dataOverlay);
 
-
-
-
-        triggeredFilter.click(function(e){
-
-        	e.preventDefault();
-          
-            
-         
-        	filterValue = $(this).text(); 
-
-
-
-        	var filterParent= $(this).parents('.filter-data');
-         
-          dataId = $(filterParent).attr("id");
-          filterLinkHolder = $("a[data-parent='" + dataId +"']");
-          console.log(filterLinkHolder);
-        	var filterWrapper = $(filterLinkHolder).parents('.filter-wrapper');
-        	var filterTrigger =  $(filterLinkHolder).parents('.filter-trigger');
-        	// var filterLinkHolder = $(filterTrigger).find('a');
-        	filterLinkHolder.text("" + filterValue + "" );
-
-       
-
-
-
-
-
-        	//Activating the next filter
-        	$(filterWrapper).next('.filter-wrapper').find('.filter-trigger').removeClass('not-active');
-
-
-
-
-        	//Callback function which hides the filter data box after submitting the value
-        	// Callback function filters the content, based on filters submitted
-        	
-
-        	setTimeout(function () { 
-
-                // Close filter data window 
-        		filterParent.removeClass('in');
-        	    filterParent.addClass('collapse');
-        	
-        	        jQuery.expr[':'].Contains = function (a, i, m) {
-                        // || a.textContent || a.innerText || ""
-                       hardware = a.getAttribute("data-hardware").toUpperCase().indexOf(m[3].toUpperCase())>=0;
-                        problems = a.getAttribute("data-problems").toUpperCase().indexOf(m[3].toUpperCase())>=0;
-                        specific = a.getAttribute("data-specific").toUpperCase().indexOf(m[3].toUpperCase())>=0;
-                        filterValues = hardware + problems + specific;
-                        return (filterValues);
-        	        };
-
-        	        function listFilter(list) {
-        	                var filter = filterValue;
-
-                            //checks the filter value, when "Alle Bereiche" is set, filtering is done without matching a value
-        	                if (filter) {
-                                if(filter == "Alle Bereiche") {
-                                    filter = '';
-                                    
-                                    $(list).find("a:not(:Contains(" + filter+ "))").parent().slideUp();
-
-                                    
-                                    var filteredList = $(list).find("a:Contains(" + filter + ")");
-                                    var numberReturned = $(filteredList).length;
-
-                                    
-
-
-                                    //Loop through the filtered list and style the new list elements
-                                    filteredList.css('background', '#fff');
-
-                                    for ( var i=0; i < filteredList.length; i++ )
-                                      {
-                                        // do stuff with boxes[i]
-                                        if ( ( (i+1) % 2 ) === 0 )
-                                          {
-                                              $(filteredList[i]).css('background', '#f8f8f8');
-                                              // do stuff with the fourth item
-                                          }
-                                      }
-
-                                    // writing the number returned 
-                                    $('#search-header').find('.search-count span').text(numberReturned);
-                                    $('#search-footer').find('.search-count span').text(numberReturned);
-          
-
-
-
-                                    $(list).find("a:Contains(" + filter + ")").parent().slideDown();
-
-
-                                } else {
-                                    $(list).find("a:not(:Contains(" + filter + "))").parent().slideUp();
-
-                                 
-                                    var filteredList = $(list).find("a:Contains(" + filter + ")");
-                                    var numberReturned = $(filteredList).length;
-
-                                    
-
-
-                                    //Loop through the filtered list and style the new list elements
-                                    filteredList.css('background', '#fff');
-
-                                    for ( var i=0; i < filteredList.length; i++ )
-                                      {
-                                        // do stuff with boxes[i]
-                                        if ( ( (i+1) % 2 ) === 0 )
-                                          {
-                                              $(filteredList[i]).css('background', '#f8f8f8');
-                                              // do stuff with the fourth item
-                                          }
-                                      }
-
-                                    // writing the number returned 
-                                    $('#search-header').find('.search-count span').text(numberReturned);
-                                    $('#search-footer').find('.search-count span').text(numberReturned);
-
-
-
-                                    $(list).find("a:Contains(" + filter + ")").parent().slideDown();
-
-                                }
-        	                  
-        	                } else {
-        	                    $(list).find("li").slideDown();
-        	                }
-
-        	                return false;
-        	      
-        	        }
-        	        $(function () {
-        	            listFilter($("#search-content"));
-        	        });
-
-        	}, 500); 
-
-
-
-        });
-    });
-//triggering Overlay for mobile
-
-if ($("html").hasClass("desktop")) {
-
-triggers = $('.filterbar').find('.filter-trigger a');
-console.log(triggers);
-$(triggers).each(function(i){
-  trigger = $(this);
-
-
-
-
-    trigger.click(function(e){
-      dataOverlay = $(this).parent().next('.filter-data');
-
-      parentId = $(this).attr("data-parent");
-      console.log(parentId);
-
-
-          openLightbox(dataOverlay);
-
-          e.preventDefault();
-
-
-console.log("Babe!");
-    });
- });
-
-}
+                  e.preventDefault();
+            });
+         });
+    }
 
 });
  

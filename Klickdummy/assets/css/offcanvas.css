@@ -894,26 +894,22 @@ li.searchbar {
 
 
   position:absolute;
-  top:80px;
-  left:50%;
-
-  background: #fff;
+  top:160px;
+  margin:0 auto;
 
   width: 645px;
   max-width: 100%;
-  margin-left: -323px;
 
-
-  margin-top: 80px;
-
-box-shadow:0px, 7px, 25px, 0.05;
+  box-shadow:0px, 7px, 25px, 0.05;
   
   z-index: 9999;
 
   visibility: hidden;
+  display:block;
+  margin:0 auto;
 
 }
-#lightbox-dialog .filter-data{
+#lightbox-dialog .overlay-data{
   position:relative;
   max-height:none;
   width:100%;
@@ -921,8 +917,27 @@ box-shadow:0px, 7px, 25px, 0.05;
   padding-bottom:20px;
   display:block;
 }
+#lightbox-dialog  .filter-data {
+  max-height:none;
+  overflow-y:visible !important;
+  height:auto;
+  max-height:none !important;
+}
 
+#lightbox-dialog  .filter-data li a {
+  width:100%;
+  text-indent:0;
+  padding:15px 20px;
+  display:block;
+  border-bottom:1px solid #dadada;
+}
+.select {
+  display:none;
+}
 
+.mobile .select {
+  display:block;
+}
 
 
 
