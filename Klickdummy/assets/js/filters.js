@@ -169,52 +169,36 @@ function openLightbox(data) {
 
         // Filtering the content, returning the matched results, styling the results
         function listFilter(list, filterParent, filterValue) {
-                var filter = filterValue;
+                var filter = filterValue,
+                filter1,
+                filter2,
+                filter3;
+
+
+
+                 if(typeof $( "body" ).data( "dataHardware") != "undefined") {
+                  filter1 = $( "body" ).data( "dataHardware" );
+               }  else {
+                filter1 = $( ".filter-value" ).text();
+               }   
+                 if(typeof $( "body" ).data( "dataProblems") != "undefined") {
+                  filter2 = $( "body" ).data( "dataProblems" );
+               }  else {
+                filter2 = $( ".filter-value" ).text();
+               }  
+                 if(typeof $( "body" ).data( "dataSpecific") != "undefined") {
+                  filter3 = $( "body" ).data( "dataSpecific" );
+               }  else {
+                filter3 = $( ".filter-value" ).text();
+               } 
+             
 
                 if (filter) {
 
-                    //checks the filter value, when "Alle Bereiche" is set, filtering is done without matching a value
-                    if(filter == "Alle Bereiche") {
-                        filter = '';
-                        
-                        $(list).find("a:not(:Contains(" + filter+ "))").parent().slideUp();
-
-                        
-                        var filteredList = $(list).find("a:Contains(" + filter + ")");
-                        var numberReturned = $(filteredList).length;
-
-                        
-
-
-                        //Loop through the filtered list and style the new list elements
-                        filteredList.css('background', '#fff');
-
-                        for ( var i=0; i < filteredList.length; i++ )
-                          {
-                            // do stuff with boxes[i]
-                            if ( ( (i+1) % 2 ) === 0 )
-                              {
-                                  $(filteredList[i]).css('background', '#f8f8f8');
-                                  // do stuff with the fourth item
-                              }
-                          }
-
-                        // writing the number returned 
-                        $('#search-header').find('.search-count span').text(numberReturned);
-                        $('#search-footer').find('.search-count span').text(numberReturned);
-        
-
-
-                        $(list).find("a:Contains(" + filter + ")").parent().slideDown();
-                        
-                        pagination(numberReturned, filteredList);
-                    
-
-                    } else {
-                        $(list).find("a:not(:Contains(" + filter + "))").parent().slideUp();
+                        $(list).find("a:not(:Contains(" + filter1 + filter2 + filter3 +"))").parent().slideUp();
 
                      
-                        var filteredList = $(list).find("a:Contains(" + filter + ")");
+                        var filteredList = $(list).find("a:Contains(" + filter1 + filter2 + filter3  +")");
                         var numberReturned = $(filteredList).length;
 
                         
@@ -240,11 +224,11 @@ function openLightbox(data) {
 
 
 
-                        $(list).find("a:Contains(" + filter + ")").parent().slideDown();
+                        $(list).find("a:Contains(" + filter1 + filter2 + filter3 + ")").parent().slideDown();
                         pagination(numberReturned,  filteredList);
 
 
-                    }
+                 
                   
                 } else {
                     $(list).find("li").slideDown();
@@ -268,18 +252,21 @@ function openLightbox(data) {
                     filterParent = $(this).parents('.filter-wrapper');
                     nextParent = $(filterParent).nextAll('.filter-wrapper');
                     nextTrigger = $(nextParent).find('.filter-trigger');
-                    console.log( nextTrigger);
-                    
+                
 
                     if($(nextTrigger).length > 0){
-                        console.log(nextTrigger.length);
+              
                     $(nextTrigger).each(function(i){
 
 
                     if($(this).hasClass('not-active')) {
                         
                     } else {
-                        $(this).addClass('not-active');
+                        $(this).find('a').text("Alle Bereiche");
+                        var linkId = $(this).find('a').attr("id");
+                        $(this).next('.filter-data').removeClass("in").addClass('collapse');
+                        $(this).addClass('not-active');                      
+   
                     }
 
                     });
@@ -310,9 +297,14 @@ function openLightbox(data) {
                  
                     dataId = $(filterParent).attr("id");
                     filterLinkHolder = $("a[data-parent='" + dataId +"']");
+                    filterLinkId =$(filterLinkHolder).attr("id");
+                
 
                     var filterWrapper = $(filterLinkHolder).parents('.filter-wrapper');
                     var filterTrigger =  $(filterLinkHolder).parents('.filter-trigger');
+
+                   
+
 
                     // var filterLinkHolder = $(filterTrigger).find('a');
                     filterLinkHolder.text("" + filterValue + "" );
@@ -322,7 +314,32 @@ function openLightbox(data) {
                     //Activating the next filter
                     $(filterWrapper).next('.filter-wrapper').find('.filter-trigger').removeClass('not-active');
 
-
+                    //Rewrite the value for " Alle Bereiche "
+                    if (filterValue == "Alle Bereiche") {
+                      filterValue = " ";
+                    }
+                    
+                    
+                           //Detecting which filter was triggered and storing values
+                           switch (filterLinkId) {
+                               case ('data-hardware'):
+                       
+                                  $( "body" ).data( "dataHardware", filterValue );         
+                                   break;
+                               case ('data-problems'):
+                                   $( "body" ).data( "dataProblems", filterValue );  
+                                
+                                   break;
+                               case ('data-specific'):
+                                   $( "body" ).data( "dataSpecific", filterValue );  
+                                 
+                                   break;
+                               default:
+                                  alert("The filter was not triggered");
+                           }
+   
+                           
+                    
 
                     //Callback function which hides the filter data box after submitting the value
                     // Callback function filters the content, based on filters submitted
@@ -341,7 +358,8 @@ function openLightbox(data) {
                         checkFilterState();
                     
                           
-                        listFilter($("#search-content"), filterParent, filterValue);                     
+                        listFilter($("#search-content"), filterParent, filterValue);  
+
 
                     }, 500); 
 
@@ -354,6 +372,11 @@ function openLightbox(data) {
 //////////////
 
 $(document).ready(function() {
+
+
+   // $( "body" ).data( "dataHardware", "" );         
+   // $( "body" ).data( "dataProblems", "" );  
+   // $( "body" ).data( "dataSpecific", "" );  
     number_of_items = $('#search-content ul').children().size();
     searchList = $('#search-content ul');
     pagination(number_of_items, searchList);
@@ -375,7 +398,7 @@ $(document).ready(function() {
               dataOverlay.addClass('overlay-data');
 
               parentId = $(this).attr("data-parent");
-              console.log(parentId);
+         
 
                   openLightbox(dataOverlay);
 
