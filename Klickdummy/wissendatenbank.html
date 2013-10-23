@@ -20,6 +20,8 @@
       <script src="assets/js/html5shiv.js"></script>
       <script src="assets/js/respond.min.js"></script>
     <![endif]-->
+
+    <script src="http://cdn.jquerytools.org/1.2.7/full/jquery.tools.min.js"></script>
   </head>
 
   <body id="serviceOverview">
@@ -142,17 +144,13 @@
                  <div  id="filter1" class="filter filter-trigger">
                    <a id="data-hardware" data-toggle="collapse"  data-parent="filter-data1" href="#filter-data1" class="collapsed active">Alle Bereiche <span></span></a>
                   </div>
-                
+                  <div>
                   <div id="filter-data1" class="collapse filter filter-data" data-parent="filter1">
                         <ul class="">
                           <li><a href="">Alle Bereiche</a></li>
-                          <li><a href="">something</a></li>
                           <li><a href="">Internet + Heimnetz</a></li>
-                          <li><a href="">WLAN-Funknetzwerk</a></li>
-                          <li><a href="">Telefonie + Fax</a></li>
-                          <li><a href="">USB-Geräte</a></li> 
-                          <li><a href="">System + Hardware</a></li>  
                         </ul>
+                   </div>
                    </div>
 
      
@@ -162,15 +160,18 @@
                   <div  id="filter2" class="filter filter-trigger not-active">
                    <a id="data-problems" data-toggle="collapse"  data-parent="filter-data2" href="#filter-data2" class="collapsed">Alle Bereiche <span></span></a>
                   </div>
+                  <div>
                   <div id="filter-data2" class="collapse filter filter-data" data-parent="filter2">
                         <ul class="">
                           <li><a href="">Alle Bereiche</a></li>
                           <li><a href="">Internetzugang</a></li>
                           <li><a href="">Netzwerk</a></li>
-                          <li><a href="">Sicherheit + Freigeben </a></li>
+                          <li><a href="">MyFRITZ!</a></li>
+                          <li><a href="">Sicherheit + Freigaben </a></li>
                           <li><a href="">VPN</a></li>
                           <li><a href="">Speicher (NAS)</a></li>            
                         </ul>
+                   </div>
                    </div>
                  </div>
                 <div class="filter-wrapper">
@@ -178,15 +179,16 @@
                  <a id="data-specific" data-toggle="collapse"  data-parent="filter-data3" href="#filter-data3" class="collapsed">Alle Bereiche <span></span></a>
                 </div>
 
-
+                <div>
                 <div id="filter-data3" class="collapse filter filter-data" data-parent="filter3">
                       <ul class="">
                         <li><a href="">Alle Bereiche</a></li>
                         <li><a href="">Internetzugang einrichten</a></li>
-                        <li><a href="">Internetszugangsprobleme beheben</a></li>
-                        <li><a href="">Internet regulieren (z.B. Kindersicherung)</a></li>
+                        <li><a href="">Internetzugangsprobleme beheben</a></li>
+                        <li><a href="">Internetzugang regulieren (z.B. Kindersicherung)</a></li>
                         <li><a href="">Andere Themen zum Internetzugang</a></li>      
                       </ul>
+                 </div>
                  </div>
                  </div>
 
@@ -229,18 +231,18 @@
           <ul>
             <li> <a href="" data-hardware="Internet + Heimnetz" data-problems="Internetzugang" data-specific="Internetzugang einrichten">
               Maximale Anzahl gleichzeitiger IP-Verbindungen</a></li>
-             <li> <a href="" data-hardware="something" data-problems="Internetzugang" data-specific="Andere Themen zum Internetzugang">LAN-Gastzugang in FRITZ!Box einrichten</a></li>
              <li> <a href="" data-hardware="Internet + Heimnetz" data-problems="Internetzugang" data-specific="Andere Themen zum Internetzugang">LAN-Gastzugang in FRITZ!Box einrichten</a></li>
+             <li> <a href="" data-hardware="Internet + Heimnetz" data-problems="Netzwerk" data-specific="Andere Themen zum Netzwerk">LAN-Gastzugang in FRITZ!Box einrichten</a></li>
              <li> <a href="" data-hardware="Internet + Heimnetz" data-problems="Internetzugang" data-specific="Internetzugang einrichten">FRITZ!Box mit Kabelmodem meldet alle 12 Stunden "Internetverbindung wurde erfolgreich erneuert"</a></li>
-             <li><a href="" data-hardware="Internet + Home network" data-problems="Internetzugang" data-specific="Internetzugang einrichten">Kurzzeitige Trennungen der DSL-Internetverbindung</a></li>
-             <li><a href="" data-hardware="Internet + Heimnetz" data-problems="Netzwerk" data-specific="Netzwerkprobleme beheben">MTU-Size für DSL-Verbindungen manuell anpassen</a></li>
+             <li><a href="" data-hardware="Internet + Home network" data-problems="Netzwerk" data-specific="Andere Themen zum Netzwerk">Kurzzeitige Trennungen der DSL-Internetverbindung</a></li>
+             <li><a href="" data-hardware="Internet + Heimnetz" data-problems="Netzwerk" data-specific="Andere Themen zum Netzwerk">MTU-Size für DSL-Verbindungen manuell anpassen</a></li>
              <li><a href="" data-hardware="Internet + Heimnetz" data-problems="Internetzugang" data-specific="Internetzugang einrichten">Ist die FRITZ!Box durch die UPnP-Schwachstelle gefährdet, über die die Computerpresse berichtet?</a></li>
              <li><a href="" data-hardware="Internet + Heimnetz" data-problems="Internetzugang" data-specific="Internetzugang einrichten">Kennworte werden verkürzt bzw. verlängert</a></li>
-             <li><a href="" data-hardware="Internet + Heimnetz" data-problems="Netzwerk" data-specific="Netzwerkprobleme beheben">Anwendung (z.B. SSH) verliert gelegentlich die Verbindung zu Gegenstellen im Internet</a></li>
-             <li><a href="" data-hardware="Internet + Heimnetz" data-problems="Internetzugang" data-specific="Internetzugangsprobleme beheben">Unterstützte DSL-Anschlüsse</a></li>
-             <li><a href="" data-hardware="USB-Geräte" data-problems="Internetzugang" data-specific="Internetzugangsprobleme beheben">IPv6-Unterstützung für FRITZ!Box-Heimnetz einrichten</a></li>
+             <li><a href="" data-hardware="Internet + Heimnetz" data-problems="Netzwerk" data-specific="Andere Themen zum Netzwerk">Anwendung (z.B. SSH) verliert gelegentlich die Verbindung zu Gegenstellen im Internet</a></li>
+             <li><a href="" data-hardware="Internet + Heimnetz" data-problems="Internetzugang" data-specific="Internetzugang einrichten">Unterstützte DSL-Anschlüsse</a></li>
+             <li><a href="" data-hardware="USB-Geräte" data-problems="" data-specific="Internetzugangsprobleme beheben">IPv6-Unterstützung für FRITZ!Box-Heimnetz einrichten</a></li>
              <li><a href="" data-hardware="Internet + Heimnetz" data-problems="Internetzugang" data-specific="Internetzugang einrichten">Andere DNS-Server in FRITZ!Box einrichten</a></li>
-             <li><a href="" data-hardware="Internet + Heimnetz" data-problems="Internetzugang" data-specific="Andere Themen zum Internetzugang">VPN-Software eines anderen Herstellers über Internetverbindung der FRITZ!Box nutzen</a></li>
+             <li><a href="" data-hardware="Internet + Heimnetz" data-problems="Internetzugang" data-specific="Internetzugang einrichten">VPN-Software eines anderen Herstellers über Internetverbindung der FRITZ!Box nutzen</a></li>
           </ul> 
         </div>
         <div id="search-footer">
@@ -303,6 +305,7 @@
     <script src="assets/js/jquery.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/holder.js"></script>
+
     <script src="assets/js/filters.js"></script>
     <script src="assets/js/offcanvas-nav.js"></script>
      <script src="assets/js/categorizr.js"></script>

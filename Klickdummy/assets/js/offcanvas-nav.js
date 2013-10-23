@@ -14,6 +14,7 @@ $(document).ready(function() {
 
 	$( window ).resize(function() {
 	 	$('.container').css('left', '0');
+	 	$('.navbar-collapse').removeClass('in').addClass('collapse');
 	});
 
 });
