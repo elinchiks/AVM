@@ -180,23 +180,23 @@ function listFilter(list, filterParent, filterValue) {
     filter3;
 
 
-       //   Storing filter values
+         // Storing filter values
 
-       //   if(typeof $( "body" ).data( "dataHardware") != "undefined") {
-       //    filter1 = $( "body" ).data( "dataHardware" );
-       // }  else {
-       //  filter1 = $( ".filter-value" ).text();
-       // }   
-       //   if(typeof $( "body" ).data( "dataProblems") != "undefined") {
-       //    filter2 = $( "body" ).data( "dataProblems" );
-       // }  else {
-       //  filter2 = $( ".filter-value" ).text();
-       // }  
-       //   if(typeof $( "body" ).data( "dataSpecific") != "undefined") {
-       //    filter3 = $( "body" ).data( "dataSpecific" );
-       // }  else {
-       //  filter3 = $( ".filter-value" ).text();
-       // } 
+         if(typeof $( "body" ).data( "dataHardware") != "undefined") {
+          filter1 = $( "body" ).data( "dataHardware" );
+       }  else {
+        filter1 = $( ".filter-value" ).text();
+       }   
+         if(typeof $( "body" ).data( "dataProblems") != "undefined") {
+          filter2 = $( "body" ).data( "dataProblems" );
+       }  else {
+        filter2 = $( ".filter-value" ).text();
+       }  
+         if(typeof $( "body" ).data( "dataSpecific") != "undefined") {
+          filter3 = $( "body" ).data( "dataSpecific" );
+       }  else {
+        filter3 = $( ".filter-value" ).text();
+       } 
      
 
     //Checking if filter was triggered
@@ -274,7 +274,32 @@ function checkFilterState() {
 
                         //if the filter trigger was open, it gets closed
                         $(this).next().find('.filter-data').removeClass("in").addClass('collapse');
-                        $(this).addClass('not-active');                      
+                        $(this).addClass('not-active');  
+
+                                 //Detecting which filter was triggered and storing values
+                           switch (linkId) {
+                               case ('data-hardware'):
+                       
+                                  $( "body" ).data( "dataHardware", "" );         
+                                   break;
+                               case ('data-problems'):
+                                   $( "body" ).data( "dataProblems", "" );  
+                                
+                                   break;
+                               case ('data-specific'):
+                                   $( "body" ).data( "dataSpecific", "" );  
+                                 
+                                   break;
+                               default:
+                                  alert("The filter was not triggered");
+                           }
+
+                           console.log($( "body" ).data( "dataHardware"));
+                            console.log($( "body" ).data( "dataProblems"));
+                             console.log($( "body" ).data( "dataSpecific"));
+
+
+                       
                     }
 
                 });
@@ -320,27 +345,52 @@ function filters(links){
 
             //Rewrite the value for " Alle Bereiche "
             if (filterValue == "Alle Bereiche") {
-              filterValue = " ";
+
+
+          
+              //Detecting which filter was triggered and storing values
+                           switch (filterLinkId) {
+                               case ('data-hardware'):
+                       
+                                      filterValue = " ";
+                                      break;
+                               case ('data-problems'):
+                                   filterValue = $( "body" ).data( "dataHardware");  
+                                
+                                   break;
+                               case ('data-specific'):
+                                    filterValue = $( "body" ).data( "dataProblems")  
+                                 
+                                   break;
+                               default:
+                                   filterValue = " ";
+                           }
             }
         
                     
-                           // //Detecting which filter was triggered and storing values
-                           // switch (filterLinkId) {
-                           //     case ('data-hardware'):
+                           //Detecting which filter was triggered and storing values
+                           switch (filterLinkId) {
+                               case ('data-hardware'):
                        
-                           //        $( "body" ).data( "dataHardware", filterValue );         
-                           //         break;
-                           //     case ('data-problems'):
-                           //         $( "body" ).data( "dataProblems", filterValue );  
+                                  $( "body" ).data( "dataHardware", filterValue );         
+                                   break;
+                               case ('data-problems'):
+                                   $( "body" ).data( "dataProblems", filterValue );  
                                 
-                           //         break;
-                           //     case ('data-specific'):
-                           //         $( "body" ).data( "dataSpecific", filterValue );  
+                                   break;
+                               case ('data-specific'):
+                                   $( "body" ).data( "dataSpecific", filterValue );  
                                  
-                           //         break;
-                           //     default:
-                           //        alert("The filter was not triggered");
-                           // }
+                                   break;
+                               default:
+                                  alert("The filter was not triggered");
+                           }
+
+                           console.log($( "body" ).data( "dataHardware"));
+                            console.log($( "body" ).data( "dataProblems"));
+                             console.log($( "body" ).data( "dataSpecific"));
+
+
    
                            
                     
@@ -395,7 +445,7 @@ $(document).ready(function() {
 // Initializing Overlays for Mobile
 ////////////////////////////
 
-    if ($("html").hasClass("mobile")) {
+    if ($("html").hasClass("desktop")) {
 
         triggers = $('.filterbar').find('.filter-trigger a');
 
