@@ -1,7 +1,8 @@
 /**
  * Functions created for content filtering
- * Different Layouts for filtering in different devices
  * Author: Elina Sundukova
+ * Comment: Different Layouts for filtering in different devices,
+ * filters are based on hooks in the content with HTML5 data fileds
  */
 
 // Initializing variables
@@ -174,33 +175,11 @@ jQuery.expr[':'].Contains = function (a, i, m) {
 
 // Filtering the content, returning the matched results, styling the results
 function listFilter(list, filterParent, filterValue) {
-    var filter = filterValue,
-    filter1,
-    filter2,
-    filter3;
+    var filter = filterValue;
 
-
-         // Storing filter values
-
-         if(typeof $( "body" ).data( "dataHardware") != "undefined") {
-          filter1 = $( "body" ).data( "dataHardware" );
-       }  else {
-        filter1 = $( ".filter-value" ).text();
-       }   
-         if(typeof $( "body" ).data( "dataProblems") != "undefined") {
-          filter2 = $( "body" ).data( "dataProblems" );
-       }  else {
-        filter2 = $( ".filter-value" ).text();
-       }  
-         if(typeof $( "body" ).data( "dataSpecific") != "undefined") {
-          filter3 = $( "body" ).data( "dataSpecific" );
-       }  else {
-        filter3 = $( ".filter-value" ).text();
-       } 
-     
 
     //Checking if filter was triggered
-    if (filter) {
+    if (filter != "undefined") {
 
         //if the list items don't contain filters, they slide up
         $(list).find("a:not(:Contains(" + filter +"))").parent().slideUp();
@@ -208,16 +187,18 @@ function listFilter(list, filterParent, filterValue) {
 
         //Finding the number of returned items  
         var filteredList = $(list).find("a:Contains(" + filter +")");
-        var numberReturned = $(filteredList).length;
-
-        // writing the number returned 
-        $('#search-header').find('.search-count span').text(numberReturned);
-        $('#search-footer').find('.search-count span').text(numberReturned);
+     
 
 
         //Loop through the filtered list and style the new list elements ,
         //necessary because of even and odd backgrounds
         styleList(filteredList);
+
+        var numberReturned = $(filteredList).length;
+
+        // writing the number returned 
+        $('#search-header').find('.search-count span').text(numberReturned);
+        $('#search-footer').find('.search-count span').text(numberReturned);
 
         //Sliding down the list items which contains filtered categories
         $(list).find("a:Contains(" + filter + ")").parent().slideDown();
@@ -235,11 +216,13 @@ function listFilter(list, filterParent, filterValue) {
 //Function to add backgrounds for :even and :odd list items
 
 function styleList(filteredList) {
-    filteredList.css('background', '#fff');
 
     for ( var i=0; i < filteredList.length; i++ ){
+
         if ( ( (i+1) % 2 ) === 0 ){
-            $(filteredList[i]).css('background', '#f8f8f8');
+            $(filteredList[i]).removeClass('filtered-list').addClass('filtered-list-colored');
+        } else {
+          $(filteredList[i]).removeClass('filtered-list-colored').addClass('filtered-list');
         }
     }
 }
@@ -293,12 +276,6 @@ function checkFilterState() {
                                default:
                                   alert("The filter was not triggered");
                            }
-
-                           console.log($( "body" ).data( "dataHardware"));
-                            console.log($( "body" ).data( "dataProblems"));
-                             console.log($( "body" ).data( "dataSpecific"));
-
-
                        
                     }
 
@@ -323,6 +300,7 @@ function filters(links){
             e.preventDefault();
             filterValue = $(this).text(); 
 
+
             var filterParent= $(this).parents('.filter-data');
 
          
@@ -334,8 +312,10 @@ function filters(links){
             var filterWrapper = $(filterLinkHolder).parents('.filter-wrapper');
             var filterTrigger =  $(filterLinkHolder).parents('.filter-trigger');
 
+
             //Adding new value to the filter
             filterLinkHolder.text("" + filterValue + "" );
+            filterTrigger.removeClass('active');
 
 
             //Activating the next filter only if value is set to not default
@@ -346,54 +326,42 @@ function filters(links){
             //Rewrite the value for " Alle Bereiche "
             if (filterValue == "Alle Bereiche") {
 
-
-          
               //Detecting which filter was triggered and storing values
-                           switch (filterLinkId) {
-                               case ('data-hardware'):
-                       
-                                      filterValue = " ";
-                                      break;
-                               case ('data-problems'):
-                                   filterValue = $( "body" ).data( "dataHardware");  
-                                
-                                   break;
-                               case ('data-specific'):
-                                    filterValue = $( "body" ).data( "dataProblems")  
-                                 
-                                   break;
-                               default:
-                                   filterValue = " ";
-                           }
+
+               switch ( filterLinkId ) {
+                  case ('data-hardware'):
+                   filterValue = "";
+                    break;
+                   case ('data-problems'):
+                     filterValue = $( "body" ).data( "dataHardware");  
+                     break;
+                   case ('data-specific'):
+                      filterValue = $( "body" ).data( "dataProblems");  
+                      break;
+                  
+               }
             }
         
                     
-                           //Detecting which filter was triggered and storing values
-                           switch (filterLinkId) {
-                               case ('data-hardware'):
-                       
-                                  $( "body" ).data( "dataHardware", filterValue );         
-                                   break;
-                               case ('data-problems'):
-                                   $( "body" ).data( "dataProblems", filterValue );  
-                                
-                                   break;
-                               case ('data-specific'):
-                                   $( "body" ).data( "dataSpecific", filterValue );  
-                                 
-                                   break;
-                               default:
-                                  alert("The filter was not triggered");
-                           }
+           //Detecting which filter was triggered and storing values
+           switch (filterLinkId) {
+               case ('data-hardware'):
+       
+                  $( "body" ).data( "dataHardware", filterValue );         
+                   break;
+               case ('data-problems'):
+                   $( "body" ).data( "dataProblems", filterValue );  
+                
+                   break;
+               case ('data-specific'):
+                   $( "body" ).data( "dataSpecific", filterValue );  
+                 
+                   break;
+               default:
+                  alert("The filter was not triggered");
+           }
 
-                           console.log($( "body" ).data( "dataHardware"));
-                            console.log($( "body" ).data( "dataProblems"));
-                             console.log($( "body" ).data( "dataSpecific"));
-
-
-   
-                           
-                    
+            
 
         //Callback function which hides the filter data box after submitting the value
         // Callback function filters the content, based on filters submitted
@@ -426,10 +394,6 @@ function filters(links){
 
 $(document).ready(function() {
 
-
-   // $( "body" ).data( "dataHardware", "" );         
-   // $( "body" ).data( "dataProblems", "" );  
-   // $( "body" ).data( "dataSpecific", "" );  
     number_of_items = $('#search-content ul').children().size();
     searchList = $('#search-content ul').find('a');
     pagination(number_of_items, searchList);
@@ -440,31 +404,51 @@ $(document).ready(function() {
 
 
 
+      
+    //Adding class active to filter trigger
+    triggers = $('.filterbar').find('.filter-trigger a');
+
+    $(triggers).each(function(i){
+      trigger = $(this);
+
+        trigger.click(function(e){
+
+        if($(this).parent().hasClass('active')) {
+          $(this).parent().removeClass('active');
+        }else {
+          $(this).parent().addClass('active');
+        }
+        
+          e.preventDefault();
+        });
+     });
+
+
 
 
 // Initializing Overlays for Mobile
 ////////////////////////////
 
-    if ($("html").hasClass("desktop")) {
+if ($("html").hasClass("mobile")) {
 
-        triggers = $('.filterbar').find('.filter-trigger a');
+    triggers = $('.filterbar').find('.filter-trigger a');
 
-        $(triggers).each(function(i){
-          trigger = $(this);
+    $(triggers).each(function(i){
+      trigger = $(this);
 
-            trigger.click(function(e){
+        trigger.click(function(e){
 
 
-              overlayData =  $(this).parent().next().find('.filter-data');
-              overlayData.addClass('overlay-data');
-              dataOverlay = $(this).parent().next('div');
+          overlayData =  $(this).parent().next().find('.filter-data');
+          overlayData.addClass('overlay-data');
+          dataOverlay = $(this).parent().next('div');
 
-              openLightbox(dataOverlay);
+          openLightbox(dataOverlay);
 
-              e.preventDefault();
-            });
-         });
-    }
+          e.preventDefault();
+        });
+     });
+}
 
 });
  

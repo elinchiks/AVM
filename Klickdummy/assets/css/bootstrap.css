@@ -359,7 +359,7 @@ textarea {
 }
 
 a {
-  color: #006ab2;
+  color: #2479ba;
   text-decoration: none;
 }
 
@@ -551,6 +551,7 @@ h6 {
 h1,
 .h1 {
   font-size: 42px;
+  margin-bottom:25px;
 }
 
 h2,
@@ -4760,11 +4761,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0070bc', end
 .navbar-inverse .navbar-toggle:hover .icon-bar,
 .navbar-inverse .navbar-toggle:focus .icon-bar {
   background-color: #fff;
-}
-
-.navbar-inverse .navbar-collapse,
-.navbar-inverse .navbar-form {
-  border-color: #fff;
 }
 
 .navbar-inverse .navbar-nav > .open > a,
