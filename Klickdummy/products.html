@@ -22,7 +22,7 @@
     <![endif]-->
   </head>
 
-  <body id="products">
+  <body id="products" class="no-js">
 
     <div class="navbar navbar-inverse">
       <div class="container">
@@ -231,7 +231,7 @@
 
       <div class="row">
         <div id= "more-products" class="col-lg-12 more ">
-          <h3>Weitere Produkte:</h2>
+          <h3>Weitere Produkte:</h3>
           <a href="#"><img src="assets/img/products/products-thumb1.jpg" alt="" /><span>ISDN-Controller</span> </a>
           <a href="#"><img src="assets/img/products/products-thumb2.jpg" alt="" /> <span>FRITZ!DECT 200</span></a>
           <a href="#"><img src="assets/img/products/products-thumb2.jpg" alt="" /> <span>FRITZ!DECT 200</span></a>
@@ -248,7 +248,7 @@
           </div>
 
           <div class="col-6 col-sm-8 col-lg-8">
-            <p  class="text-center"><a href="#">&copy; AVM GmbH</a> &nbsp;|&nbsp; <a href="#">Unternehmen</a> &nbsp;|&nbsp; <a href="#">Presse</a> &nbsp;|&nbsp; <a href="#">Impressum</a> &nbsp;|&nbsp; <a href="#">Datenschutz</a> &nbsp;|&nbsp; <a href="#">Rechtliche Hinweise</a> &nbsp;|&nbsp; <a href="#">AGB</a> &nbsp;|&nbsp; <a href="#">Partner@AVM</a> &nbsp;|&nbsp; <a href="#">Karriere</a>
+            <p><a href="#">&copy; AVM GmbH</a> &nbsp;|&nbsp; <a href="#">Unternehmen</a> &nbsp;|&nbsp; <a href="#">Presse</a> &nbsp;|&nbsp; <a href="#">Impressum</a> &nbsp;|&nbsp; <a href="#">Datenschutz</a> &nbsp;|&nbsp; <a href="#">Rechtliche Hinweise</a> &nbsp;|&nbsp; <a href="#">AGB</a> &nbsp;|&nbsp; <a href="#">Partner@AVM</a> &nbsp;|&nbsp; <a href="#">Karriere</a>
             </p>
           </div>
 
@@ -257,6 +257,7 @@
                 <a href="#" class="icon-googleplus"></a> &nbsp;
                 <a href="#" class="icon-facebook"></a> &nbsp;
                 <a href="#" class="icon-youtube"></a> &nbsp;
+                <a href="#" class="icon-mail"></a>
             </div>
           </div>
 
@@ -275,5 +276,10 @@
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/holder.js"></script>
     <script src="assets/js/offcanvas-nav.js"></script>
+    <script>
+      $(document).ready(function() {  
+           $('body').removeClass('no-js');
+      });  
+    </script>
   </body>
 </html>

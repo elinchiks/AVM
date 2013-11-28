@@ -3256,7 +3256,7 @@ input[type="button"].btn-block {
   content: "\1f527";
 }
 
-.caret {
+/*.caret {
   display: inline-block;
   width: 0;
   height: 0;
@@ -3267,7 +3267,7 @@ input[type="button"].btn-block {
   border-bottom: 0 dotted;
   border-left: 4px solid transparent;
   content: "";
-}
+}*/
 
 .dropdown {
   position: relative;
@@ -3696,7 +3696,7 @@ input[type="button"].btn-block {
 
 
 .navbar-right .search input {
- width: 53px;
+ width: 100px;
  -moz-transition: width 0.5s ease-out;
  -webkit-transition: width 0.5s ease-out;
  transition: width 0.5s ease-out;
@@ -3921,9 +3921,6 @@ textarea.input-group-sm > .input-group-btn > .btn {
   list-style: none;
 }
 
-.navbar-nav.loc {
-  margin-right: 89px;
-}
 
 .navbar-inverse .navbar-nav.loc > .open > a, .navbar-inverse .navbar-nav.loc > .open > a:hover, .navbar-inverse .navbar-nav.loc > .open > a:focus {
     background-color: #f8f8f8;
@@ -4408,6 +4405,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
   padding-bottom: 10px;
   line-height: 20px;
   font-size: 20px;
+  padding-left:20px;
 }
 
 @media (max-width: 767px) {
@@ -4456,7 +4454,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
   .navbar-right {
     position: absolute;
     top: 17px;
-    right: 15px;
+    right: 62px;
   }
 
 }

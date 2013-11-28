@@ -22,9 +22,9 @@
     <![endif]-->
   </head>
 
-  <body id="service">
+  <body id="service" class="no-js">
 
-    <div class="navbar navbar-inverse">
+    <div class="navbar navbar-inverse" >
       <div class="container">
 
         <div class="navbar-header">
@@ -474,7 +474,7 @@
           </div>
 
           <div class="col-6 col-sm-8 col-lg-8">
-            <p  class="text-center"><a href="#">&copy; AVM GmbH</a> &nbsp;|&nbsp; <a href="#">Unternehmen</a> &nbsp;|&nbsp; <a href="#">Presse</a> &nbsp;|&nbsp; <a href="#">Impressum</a> &nbsp;|&nbsp; <a href="#">Datenschutz</a> &nbsp;|&nbsp; <a href="#">Rechtliche Hinweise</a> &nbsp;|&nbsp; <a href="#">AGB</a> &nbsp;|&nbsp; <a href="#">Partner@AVM</a> &nbsp;|&nbsp; <a href="#">Karriere</a>
+            <p><a href="#">&copy; AVM GmbH</a> &nbsp;|&nbsp; <a href="#">Unternehmen</a> &nbsp;|&nbsp; <a href="#">Presse</a> &nbsp;|&nbsp; <a href="#">Impressum</a> &nbsp;|&nbsp; <a href="#">Datenschutz</a> &nbsp;|&nbsp; <a href="#">Rechtliche Hinweise</a> &nbsp;|&nbsp; <a href="#">AGB</a> &nbsp;|&nbsp; <a href="#">Partner@AVM</a> &nbsp;|&nbsp; <a href="#">Karriere</a>
             </p>
           </div>
 
@@ -483,6 +483,7 @@
                <a href="#" class="icon-googleplus"></a> &nbsp;
                <a href="#" class="icon-facebook"></a> &nbsp;
                <a href="#" class="icon-youtube"></a> &nbsp;
+               <a href="#" class="icon-mail"></a>
             </div>
           </div>
 
@@ -520,6 +521,11 @@
     $('#collapseDiv').on('hidden.bs.collapse', function () {
        $(".glyphicon").removeClass("glyphicon-plus").addClass("glyphicon-plus");
     }); 
+</script>
+<script>
+  $(document).ready(function() {  
+       $('body').removeClass('no-js');
+  });  
 </script>
 
   </body>

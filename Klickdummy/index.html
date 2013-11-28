@@ -20,9 +20,11 @@
       <script src="assets/js/html5shiv.js"></script>
       <script src="assets/js/respond.min.js"></script>
     <![endif]-->
+
+
   </head>
 
-  <body id="home">
+  <body id="home" class="no-js">
 
     <div class="navbar navbar-inverse">
       <div class="container">
@@ -57,26 +59,6 @@
         </div><!--/.navbar-collapse -->
 
         <form class="navbar-right">
-          <ul class="nav navbar-nav loc">
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-globe"></span> <span class="region">AUS</span> <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li class="dropdown-header"><h3><a href="#">LAND</a></h3></li>
-                <li><a href="#">Germany</a></li>
-                <li class="active"><a href="#">Austria</a></li>
-                <li><a href="#">Switzerland (german)</a></li>
-                <li><a href="#">Switzerland (french)</a></li>
-                <li><a href="#">Belgium</a></li>
-                <li><a href="#">Netherlands</a></li>
-                <li><a href="#">Luxembourg</a></li>
-                <li><a href="#">Poland</a></li>
-                <li><a href="#">Italy</a></li>
-                <li><a href="#">Spain</a></li>
-                <li><a href="#">Great Britain</a></li>
-                <li><a href="#">International</a></li>
-              </ul>
-            </li>
-          </ul>
           <div class="input-group search">
               <input type="search" class="form-control" placeholder=""/>
               <span class="input-group-btn">
@@ -93,56 +75,9 @@
 
       <div class="row row-offcanvas row-offcanvas-right">
 
-        <div class="col-xs-3 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation" style="padding-right: 0;">
-          <div class="sidebar-nav">
-            <ul class="nav news">
-              <li><h4>Aktuelles</h4></li>
-              <li><p>20.07.2011<br /><a href="#">c't: dreimal "sehr gut" für FRITZ!Box 3370</a></p></li>
-              <li><p>11.07.2011<br /><a href="#">Macwelt: FRITZ!Box 3370 mit besten WLAN-Werten</a></p></li>
-              <li><p>08.07.2011<br /><a href="#">Jetzt verfügbar: großes Sommer-Upgrade für Ihre FRITZ!Box</a></p></li>
-            </ul>
-            <ul class="nav service">
-              <li><h4><a href="#">Service</a></h4></li>
-              <li><p style="margin: 0 0 10px 0;">Tipps und Tricks rund um Ihr FRITZ!-Produkt</p></li>
-              <li><p><a href="#">FRITZ!Box 7390</a></p></li>
-              <li><p><a href="#">FRITZ!Box 7270</a></p></li>
-              <li><p><a href="#">FRITZ!WLAN USB Stick N</a></p></li>
-              <li><p style="margin: 0 0 20px 0;"><a href="#">FRITZ!WLAN Repeater N/G</a></p></li>
-            </ul>
-            <ul class="nav labor">
-              <li><h4><a href="#">FRITZ! Labor</a></h4></li>
-              <li><p>Frisch aus der Entwicklung mit Vorschau auf kommende Firmwares</p></li>
-            </ul>
-            <ul class="nav">            
-              <li><h4><a href="#">Social Media</a></h4></li>
-              <li><p>Newsletter, Social Media und Videos rund um AVM und FRITZ!</p></li>
-            <!--   <li><p><a href="#"><img src="assets/img/icons/icon-googleplus.png" alt="Google Plus"></a> &nbsp;<a href="#"><img src="assets/img/icons/icon-facebook.png" alt="Facebook"></a> &nbsp;<a href="#"><img src="assets/img/icons/icon-youtube.png" alt="Youtube"></a> &nbsp;<a href="#"><img src="assets/img/icons/icon-mail.png" alt="Email"></a></p> -->
+      
 
-
-              <li><p class="social-buttons">
-                <a href="#" class="icon-googleplus"></a> &nbsp;
-                <a href="#" class="icon-facebook"></a> &nbsp;
-                <a href="#" class="icon-youtube"></a> &nbsp;
-                <a href="#" class="icon-mail"></a>
-              </p></li>
-
-            </ul>
-            <ul class="nav check">
-              <li><h4><a href="#">Läuft überall</a></h4></li>
-              <li><p>FRITZ!Box für jeden Internetanbieter einrichten</p></li>
-            </ul>
-            <ul class="nav clips">
-              <li><h4><a href="#">FRITZ! Clips</a></h4></li>
-              <li><p>Produktvideos zeigen Funktionsvielfalt und erklären die Einrichtung</p></li>
-            </ul>
-            <ul class="nav awards">
-              <li><h4><a href="#">Awards</a></h4></li>
-              <li><p>Mehr als 500 Awards für AVM-Produkte</p></li>
-            </ul>
-          </div><!--/.well -->
-        </div><!--/span-->
-
-        <div class="col-xs-12 col-sm-9 col-md-9">
+        <div class="col-xs-12 col-sm-9 col-md-9 right">
 
           <!-- Carousel
           ================================================== -->
@@ -186,7 +121,7 @@
 
           <div class="row start">
             
-            <div class="col-xs-6 col-sm-6 col-md-4">
+            <div class="col-xs-6 col-sm-6 col-md-4 right">
               <img class="img-responsive" src="assets/img/start/start-thumb1.jpg" alt="Zum Artikel">
               <h3 class="even"><a href="#">Update: neue Funktionen für FRITZ!Box 7170</a></h3>
               <p class="even">Jetzt kostenlos zum Download: Neue Funktionen für Smartphones, Internetfreigabe und vieles mehr.<br />
@@ -232,31 +167,98 @@
         </div><!--/span-->
 
 
+        <div class="col-xs-12 col-sm-3 sidebar-offcanvas left" id="sidebar" role="navigation" style="padding-right: 0;">
+          <div class="sidebar-nav">
+            <ul class="nav news">
+              <li><h4>Aktuelles</h4></li>
+              <li><p><span>20.07.2011</span> <a href="#">c't: dreimal "sehr gut" für FRITZ!Box 3370</a></p></li>
+              <li><p><span>11.07.2011</span> <a href="#">Macwelt: FRITZ!Box 3370 mit besten WLAN-Werten</a></p></li>
+              <li><p><span>08.07.2011</span> <a href="#">Jetzt verfügbar: großes Sommer-Upgrade für Ihre FRITZ!Box</a></p></li>
+            </ul>
+            <ul class="nav service">
+              <li><h4><a href="#">Service</a></h4></li>
+              <li><p style="margin: 0 0 10px 0;">Tipps und Tricks rund um Ihr FRITZ!-Produkt</p></li>
+              <li><p><a href="#">FRITZ!Box 7390</a></p></li>
+              <li><p><a href="#">FRITZ!Box 7270</a></p></li>
+              <li><p><a href="#">FRITZ!WLAN USB Stick N</a></p></li>
+              <li><p style="margin: 0 0 20px 0;"><a href="#">FRITZ!WLAN Repeater N/G</a></p></li>
+            </ul>
+            <ul class="nav labor">
+              <li><h4><a href="#">FRITZ! Labor</a></h4></li>
+              <li><p>Frisch aus der Entwicklung mit Vorschau auf kommende Firmwares</p></li>
+            </ul>
+            <ul class="nav">            
+              <li><h4><a href="#">Social Media</a></h4></li>
+              <li><p>Newsletter, Social Media und Videos rund um AVM und FRITZ!</p></li>
+            <!--   <li><p><a href="#"><img src="assets/img/icons/icon-googleplus.png" alt="Google Plus"></a> &nbsp;<a href="#"><img src="assets/img/icons/icon-facebook.png" alt="Facebook"></a> &nbsp;<a href="#"><img src="assets/img/icons/icon-youtube.png" alt="Youtube"></a> &nbsp;<a href="#"><img src="assets/img/icons/icon-mail.png" alt="Email"></a></p> -->
+
+
+              <li><p class="social-buttons">
+                <a href="#" class="icon-googleplus"></a> &nbsp;
+                <a href="#" class="icon-facebook"></a> &nbsp;
+                <a href="#" class="icon-youtube"></a> &nbsp;
+                <a href="#" class="icon-mail"></a>
+              </p></li>
+
+            </ul>
+            <ul class="nav check">
+              <li><h4><a href="#">Läuft überall</a></h4></li>
+              <li><p>FRITZ!Box für jeden Internetanbieter einrichten</p></li>
+            </ul>
+            <ul class="nav clips">
+              <li><h4><a href="#">FRITZ! Clips</a></h4></li>
+              <li><p>Produktvideos zeigen Funktionsvielfalt und erklären die Einrichtung</p></li>
+            </ul>
+            <ul class="nav awards">
+              <li><h4><a href="#">Awards</a></h4></li>
+              <li><p>Mehr als 500 Awards für AVM-Produkte</p></li>
+            </ul>
+          </div><!--/.well -->
+        </div><!--/span-->
+
+
       </div><!--/row-->
 
       <footer>
         <div class="row">
 
-          <div class="col-6 col-sm-2 col-lg-2" style="padding-left: 0;">
+          <div class="col-6 col-sm-2 col-lg-1" style="padding-left: 0;">
             <a href="#" class="footer-brand"><img src="assets/img/logo/AVM-logo-color.png" alt="AVM"></a>  
           </div>
 
-          <div class="col-6 col-sm-8 col-lg-8">
-            <p  class="text-center"><a href="#">&copy; AVM GmbH</a> &nbsp;|&nbsp; <a href="#">Unternehmen</a> &nbsp;|&nbsp; <a href="#">Presse</a> &nbsp;|&nbsp; <a href="#">Impressum</a> &nbsp;|&nbsp; <a href="#">Datenschutz</a> &nbsp;|&nbsp; <a href="#">Rechtliche Hinweise</a> &nbsp;|&nbsp; <a href="#">AGB</a> &nbsp;|&nbsp; <a href="#">Partner@AVM</a> &nbsp;|&nbsp; <a href="#">Karriere</a>
-            </p>
+          <div class="col-6 col-sm-8 col-lg-7">
+            <p><a href="#">&copy; Unternehmen</a> &nbsp;|&nbsp; <a href="#"> Karriere</a> &nbsp;|&nbsp; <a href="#">Presse</a> &nbsp;|&nbsp; <a href="#">Partner </a> &nbsp;|&nbsp; <a href="#">Impressum</a> &nbsp;|&nbsp; <a href="#"> Datenschutz</a> &nbsp;|&nbsp; <a href="#">Rechtliche Hinweise </a> &nbsp;|&nbsp; 
+            </p> 
           </div>
-
-          <div class="col-6 col-sm-2 col-lg-2" style="padding-right: 0;">
+          <ul class="nav navbar-nav loc">
+            <li class="dropdown">
+              <ul class="dropdown-menu">
+                <li><a href="#"><span class="flag icon-germany"></span>Germany</a></li>
+                <li  class="active"> <a href="#"><span class="flag icon-austria"></span>Austria</a></li>
+                <li><a href="#"><span class="flag icon-switzerland"></span>Switzerland (german)</a></li>
+                <li><a href="#"><span class="flag icon-switzerland"></span>Switzerland (french)</a></li>
+                <li><a href="#"><span class="flag icon-belgium"></span>Belgium</a></li>
+                <li><a href="#"><span class="flag icon-netherlands"></span>Netherlands</a></li>
+                <li><a href="#"><span class="flag icon-luxemburg"></span>Luxembourg</a></li>
+                <li><a href="#"><span class="flag icon-poland"></span>Poland</a></li>
+                <li><a href="#"><span class="flag icon-italy"></span>Italy</a></li>
+                <li><a href="#"><span class="flag icon-spain"></span>Spain</a></li>
+                <li><a href="#"><span class="flag icon-international"></span>International</a></li>
+              </ul>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-globe"></span> <i class="flag icon-germany"></i> <b class="caret"></b></a>
+             
+            </li>
+          </ul>
+   
             <div class="socials">
                 <a href="#" class="icon-googleplus"></a> &nbsp;
                 <a href="#" class="icon-facebook"></a> &nbsp;
                 <a href="#" class="icon-youtube"></a> &nbsp;
+                <a href="#" class="icon-mail"></a>
 
             </div>
-          </div>
 
         </div>
-
       </footer>
 
     </div><!--/.container-->
@@ -274,6 +276,7 @@
 
   <script>
   $(document).ready(function() {  
+    $('body').removeClass('no-js');
        $("#myCarousel").swiperight(function() {  
           $(this).carousel('prev');  
           });  

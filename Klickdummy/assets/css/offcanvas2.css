@@ -31,18 +31,13 @@ p.even {
 }
 
 footer {
+  padding-left: 15px;
+  padding-right: 15px;
   padding-top: 20px;
 }
 
 footer p, footer a {
   color: #666;
-  font-family: 'AVMMetaOT', Helvetica, Arial, sans-serif;
-  color: #676767;
-}
-footer p {
-  line-height:28px;
-  font-size: 12px;
-
 }
 
 footer .socials {
@@ -79,14 +74,6 @@ footer .socials {
 
 .more a {
   padding: 0 30px 0 0;
-}
-
-.left {
-  float:left !important;
-}
-
-.right {
-  float:right !important;
 }
 
 
@@ -1142,7 +1129,6 @@ li.searchbar {
    font-size: 20px;
    border-radius: 0 0 0 0;
    width:100%;
-   display:block;
  }
 
  .navbar-collapse.in .navbar-nav > li > a:hover {
@@ -1368,21 +1354,9 @@ li.searchbar {
 
 
 
- .row-offcanvas #sidebar .nav {
-    display:none;
-  }
-  .row-offcanvas #sidebar .sidebar-nav {
-    padding-right:20px;
-  }
-  .row-offcanvas #sidebar .nav.news {
-     display:block;
-     padding-right:20px;
-   }
-
-   .news a {
-     display:inline-block !important;
-     margin-left:10px;
-   }
+   .row-offcanvas #sidebar {
+     display: none;
+     }
 
    .navbar .container { position: relative; }
 
@@ -1716,6 +1690,9 @@ li.searchbar {
    border-top-right-radius: 4px;
  }
 
+ .row-offcanvas #sidebar {
+   display: none;
+ }  
  .press.carousel .item {
      height: 184px !important;
      overflow: hidden;
@@ -1880,125 +1857,6 @@ li.searchbar {
 
  }
 
- /*
-  * NO JAVASCRIPT
-  * --------------------------------------------------
-  */
- .no-js .navbar-collapse{
-  left:0;
-  display:block;
-  position:relative;
-  height:auto;
-  width:100%;
-  margin:bottom:0;
-  min-height:0 !important;
- }
-
-  .no-js .navbar-toggle {
-    display:none !important;
-  }
-
- .no-js .carousel-indicators {
-  display:none !important;
- }
- .no-js .carousel-control {
-  display:none !important;
- }
-
- .no-js #collapseNav {
-  display:block;
- }
-
- .no-js  [data-toggle="collapse"] span {
-  display:none;
- }
-
-
- .no-js  .navbar-collapse.collapse .navbar-nav > li > a {
-  display:block !important;
-  float:left;
-  width:100%;
-  padding-left:10px;
- }
-
-
-
- .flag {
-  width:15px;
-  height:10px;
-  display:inline-block;
-  margin-right:8px;
- }
-.icon-germany {
-  background: url('../../assets/img/icons/icon-germany.png');
-}
-.icon-austria{
-  background: url('../../assets/img/icons/icon-austria.png');
-}
-.icon-switzerland{
-  background: url('../../assets/img/icons/icon-switzerland.png');
-}
-.icon-belgium{
-  background: url('../../assets/img/icons/icon-belgium.png');
-}
-.icon-netherlands{
-  background: url('../../assets/img/icons/icon-netherlands.png');
-}
-.icon-luxemburg{
-  background: url('../../assets/img/icons/icon-luxemburg.png');
-}
-.icon-belgium{
-  background: url('../../assets/img/icons/icon-belgium.png');
-}
-.icon-poland{
-  background: url('../../assets/img/icons/icon-poland.png');
-}
-.icon-italy{
-  background: url('../../assets/img/icons/icon-italy.png');
-}
-.icon-spain{
-  background: url('../../assets/img/icons/icon-spain.png');
-}
-.icon-international{
-  background: url('../../assets/img/icons/icon-international.png');
-}
-
-
-.loc .open .dropdown-menu {
-  top:auto;
-  bottom:0;
-  z-index:2;
-  padding-bottom:45px;
-}
-.loc .open .dropdown-toggle {
-  z-index:3;
-}
-.loc .caret {
-  width:8px;
-  height:10px;
-  display:inline-block;
-  background: url('../../assets/img/icons/lang-arrow.png') no-repeat center center;
-  margin-left:0 !important;
-}
-.nav.loc .open a {
-  background-color:transparent;
-}
-.nav.loc a:hover{
-  background:transparent;
-}
-.nav.loc a:hover .caret{
- border: none;
- height:10px;
- padding:0 !important;
-}
-
-.news a {
-  display:block;
-}
-
-.loc .dropdown-toggle {
-  margin-top:-5px;
-}
 
 
 

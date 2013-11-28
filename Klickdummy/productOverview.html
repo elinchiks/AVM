@@ -22,7 +22,7 @@
     <![endif]-->
   </head>
 
-  <body id="product-overview">
+  <body id="product-overview" class="no-js">
 
     <div class="navbar navbar-inverse">
       <div class="container">
@@ -394,7 +394,7 @@ sensationell."<br /><br /></h5>
           </div>
 
           <div class="col-6 col-sm-8 col-lg-8">
-            <p  class="text-center"><a href="#">&copy; AVM GmbH</a> &nbsp;|&nbsp; <a href="#">Unternehmen</a> &nbsp;|&nbsp; <a href="#">Presse</a> &nbsp;|&nbsp; <a href="#">Impressum</a> &nbsp;|&nbsp; <a href="#">Datenschutz</a> &nbsp;|&nbsp; <a href="#">Rechtliche Hinweise</a> &nbsp;|&nbsp; <a href="#">AGB</a> &nbsp;|&nbsp; <a href="#">Partner@AVM</a> &nbsp;|&nbsp; <a href="#">Karriere</a>
+            <p><a href="#">&copy; AVM GmbH</a> &nbsp;|&nbsp; <a href="#">Unternehmen</a> &nbsp;|&nbsp; <a href="#">Presse</a> &nbsp;|&nbsp; <a href="#">Impressum</a> &nbsp;|&nbsp; <a href="#">Datenschutz</a> &nbsp;|&nbsp; <a href="#">Rechtliche Hinweise</a> &nbsp;|&nbsp; <a href="#">AGB</a> &nbsp;|&nbsp; <a href="#">Partner@AVM</a> &nbsp;|&nbsp; <a href="#">Karriere</a>
             </p>
           </div>
 
@@ -403,6 +403,7 @@ sensationell."<br /><br /></h5>
               <a href="#" class="icon-googleplus"></a> &nbsp;
               <a href="#" class="icon-facebook"></a> &nbsp;
               <a href="#" class="icon-youtube"></a> &nbsp;
+              <a href="#" class="icon-mail"></a>
             </div>
           </div>
 
@@ -422,5 +423,11 @@ sensationell."<br /><br /></h5>
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/holder.js"></script>
     <script src="assets/js/offcanvas-nav.js"></script>
+
+      <script>
+      $(document).ready(function() {  
+           $('body').removeClass('no-js');
+      });  
+    </script>
   </body>
 </html>
