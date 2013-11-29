@@ -42,12 +42,81 @@ footer p, footer a {
 footer p {
   line-height:28px;
   font-size: 12px;
-
 }
+#footer-nav a {
+  margin:0 1.7% 0 0;
+  display:inline-block;
+}
+#footer-nav a span{
+  width:auto;
+  padding-left:10px;
+}
+#footer-nav  {
+  padding-right:0;
+  margin-left:20px;
+}
+  
 
 footer .socials {
   float: right;
 }
+
+footer .row {
+  margin-right:0;
+}
+
+.flag {
+   width:15px;
+   height:10px;
+   display:inline-block;
+   margin-right:8px;
+}
+
+ .loc .open .dropdown-menu {
+   top:auto;
+   bottom:0;
+   z-index:2;
+   padding-bottom:45px;
+ }
+ .loc .open .dropdown-toggle {
+   z-index:3;
+ }
+ .loc .caret {
+   width:8px;
+   height:10px;
+   display:inline-block;
+   background: url('../../assets/img/icons/lang-arrow.png') no-repeat center center;
+   margin-left:0 !important;
+ }
+ .nav.loc {
+   margin-left:-20px;
+   margin-top:0;
+ }
+ .nav.loc .open a {
+   background-color:transparent;
+ }
+ .nav.loc a:hover{
+   background:transparent;
+ }
+ .nav.loc a:hover .caret{
+  border: none;
+  height:10px;
+  padding:0 !important;
+ }
+
+
+
+ .loc .dropdown-toggle {
+   margin-top:-5px;
+ }
+
+ footer .col-sm-12 {
+   text-align:center;
+ }
+ footer .col-sm-12 .nav.loc{
+   text-align:center;
+ }
+
 
 .img-container {
   min-height: 155px;
@@ -94,7 +163,7 @@ footer .socials {
   margin-top: 50px;
 }
 
-.services ul, #additional-links ul {
+.services ul, .additional-links ul {
   list-style: none;
   padding: 0;
   margin-top: 20px;
@@ -139,7 +208,7 @@ footer .socials {
           box-shadow: inset 2px 2px 1px rgba(0, 0, 0, 0.15);
 }
 
-.searchbar .input-group-btn .btn-search, .install-button, .filter-trigger {
+.searchbar .input-group-btn .btn-search, .install-button, .filter-trigger, .blue-btn {
 
   background: #0070bc; /* Old browsers */
   background: -moz-linear-gradient(-45deg,  #0070bc 33%, #0089c8 50%, #0087c6 65%, #207cca 100%); /* FF3.6+ */
@@ -152,8 +221,9 @@ footer .socials {
   color: #fff;
   padding: 4px 20px;
 }
-.searchbar .input-group-btn .btn-search:hover, .install-button:hover, .filter-trigger:hover, .navbar-toggle:hover{
+.searchbar .input-group-btn .btn-search:hover, .install-button:hover, .filter-trigger:hover, .navbar-toggle:hover, .blue-btn:hover {
 background: #0099e0; /* Old browsers */
+color: #fff;
 background: -moz-linear-gradient(-45deg,  #0099e0 0%, #0081d6 100%); /* FF3.6+ */
 background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#0099e0), color-stop(100%,#0081d6)); /* Chrome,Safari4+ */
 background: -webkit-linear-gradient(-45deg,  #0099e0 0%,#0081d6 100%); /* Chrome10+,Safari5.1+ */
@@ -419,6 +489,44 @@ li.searchbar {
    background: transparent url('../../assets/img/service/service-downloads.png') top center no-repeat;
  }
 
+ .icon-germany {
+   background: url('../../assets/img/icons/icon-germany.png');
+ }
+ .icon-austria{
+   background: url('../../assets/img/icons/icon-austria.png');
+ }
+ .icon-switzerland{
+   background: url('../../assets/img/icons/icon-switzerland.png');
+ }
+ .icon-belgium{
+   background: url('../../assets/img/icons/icon-belgium.png');
+ }
+ .icon-netherlands{
+   background: url('../../assets/img/icons/icon-netherlands.png');
+ }
+ .icon-luxemburg{
+   background: url('../../assets/img/icons/icon-luxemburg.png');
+ }
+ .icon-belgium{
+   background: url('../../assets/img/icons/icon-belgium.png');
+ }
+ .icon-poland{
+   background: url('../../assets/img/icons/icon-poland.png');
+ }
+ .icon-italy{
+   background: url('../../assets/img/icons/icon-italy.png');
+ }
+ .icon-spain{
+   background: url('../../assets/img/icons/icon-spain.png');
+ }
+ .icon-international{
+   background: url('../../assets/img/icons/icon-international.png');
+ }
+
+
+
+
+
 
  /*
   * ELEMENTS SPECIFIC TO PAGES
@@ -426,6 +534,9 @@ li.searchbar {
 /* Home Page */
   .more {
     margin-top:5px;
+  }
+  .news a {
+    display:block;
   }
 /* Service Page */
 
@@ -439,11 +550,21 @@ li.searchbar {
     overflow:hidden;
     text-align:center;
   }
-
-  .search-header , .filter-header{
-    background-color: #f5f5f5;
+  .search-header , .filter-header {
     padding:13px 22px;
+  }
+  .search-header , .filter-header, .grey-panel{
+    background-color: #f5f5f5;
     margin-top:0;
+  }
+  .grey-panel {
+    padding:10px 20px;
+  }
+  .searchbar.small {
+    margin-bottom:10px;
+  }
+  .searchbar.small .input-group-btn {
+    border-left: 15px solid #f8f8f8;
   }
 
   #service h1 {
@@ -465,7 +586,7 @@ li.searchbar {
     font-size: 24px;
   }
 
-  #service li, #additional-links li{
+  #service li, .additional-links li{
     list-style-type:none;
   }
 
@@ -488,7 +609,7 @@ li.searchbar {
   .item-image img {
     float:right;
   }
-  #service li, #additional-links li {
+  #service li, .additional-links li {
     background: url("../../assets/img/detail/list-arrow.jpg") no-repeat left 5px;
   }
   #service .nav li {
@@ -500,7 +621,7 @@ li.searchbar {
   }
 
 
-  #service li a, #additional-links li a {
+  #service li a, .additional-links li a {
     padding-left:10px;
     display:inline-block;
   }
@@ -622,7 +743,7 @@ li.searchbar {
   width:100%;
   overflow:hidden;
   height:100px;
-  margin-top:20px;
+  margin-top:60px;
 }
 .image-block{
       background:  #f8f8f8;
@@ -743,10 +864,10 @@ li.searchbar {
 #serviceOverview .moreLinks {
   margin-bottom:10px;
 }
-#additional-links ul {
+.additional-links ul {
   min-height:0;
 }
-#additional-links h3 {
+.additional-links h3 {
   font-size: 24px;
 }
 
@@ -1027,11 +1148,18 @@ li.searchbar {
  * MEDIA QUERIES
  * --------------------------------------------------
  */
-
+ @media screen and (max-width: 1200px) {
+   footer .socials {
+       text-align: center;
+       margin: 0 auto;
+       width: 100%;
+       float:right;
+  }
+ }
 
  @media screen and (max-width: 1050px) {
 
- .filter-header h4{
+ .filter-header h4, .grey-panel{
     width:100%;
     margin-bottom:20px;
  }
@@ -1054,6 +1182,7 @@ li.searchbar {
      width: 40%;
      float: none;
    }
+
 
  }
 
@@ -1204,10 +1333,7 @@ li.searchbar {
      width: 100%;
    }
 
-   footer .socials {
-     float: none;
-     text-align: center;
-   }
+
 
    footer p.text-center {
      /*text-align: left;*/
@@ -1262,6 +1388,33 @@ li.searchbar {
        clear:left;
      }
 
+     .nav.loc {
+       display:block;
+       width:100%;
+       text-align:center;
+       padding:0 20px;
+       box-sizing: border-box;
+       margin-left:0;
+     }
+
+     .navbar-nav.loc p{
+       padding:0 20px;
+     }
+
+     footer .dropdown {
+       float:none;
+       
+     }
+
+     footer .dropdown-menu {
+     top: auto;
+     bottom: 0;
+     z-index: 2;
+     padding-bottom: 45px;
+     text-align:left;
+     }
+
+
  }
 
 
@@ -1299,7 +1452,6 @@ li.searchbar {
      width:100%;
    }
 
-
  }
  /*
   * Off Canvas 768
@@ -1316,6 +1468,9 @@ li.searchbar {
 
 
  }
+
+
+
 
 
  /*
@@ -1380,8 +1535,22 @@ li.searchbar {
    }
 
    .news a {
-     display:inline-block !important;
-     margin-left:10px;
+     display:block;
+     width:65%;
+     float:left;
+   }
+
+   .news span {
+     display:block;
+     width:10%;
+     float:left;
+     min-width:100px;
+   }
+
+   .news p {
+    width:100%;
+    display:block;
+    float:left;
    }
 
    .navbar .container { position: relative; }
@@ -1407,8 +1576,7 @@ li.searchbar {
      margin: 0;
  }    
 
-   .navbar-nav.loc .dropdown span.region, .navbar-nav.loc .dropdown .caret { display: none; }
-   .navbar-nav.loc .dropdown span.glyphicon { display: block; text-align: right; }
+  
 
    .navbar-nav.loc .open .dropdown-menu > li > a {
      color: #404040;
@@ -1473,6 +1641,9 @@ li.searchbar {
     margin-top:20px;
   }
  }
+
+
+
 
 
  /*
@@ -1582,7 +1753,7 @@ li.searchbar {
     padding:0;
   }
 
-  #additional-links .col-xs-4,   #additional-links .col-xs-8{
+  .additional-links .col-xs-4,   .additional-links .col-xs-8{
     width:100%;
   }
   #support .image-block, #support .content-centered {
@@ -1695,7 +1866,7 @@ li.searchbar {
    display: block;
  }
 
- div.searchbar .input-group-btn .btn-search {
+ div.searchbar .input-group-btn .btn-search, .blue-btn{
    padding: 4px 10px;
  }
 
@@ -1922,83 +2093,63 @@ li.searchbar {
  }
 
 
-
- .flag {
-  width:15px;
-  height:10px;
-  display:inline-block;
-  margin-right:8px;
- }
-.icon-germany {
-  background: url('../../assets/img/icons/icon-germany.png');
+.simple-list {
+  list-style-type:none;
+  padding-left:0;
 }
-.icon-austria{
-  background: url('../../assets/img/icons/icon-austria.png');
+.simple-list li {
+  margin-bottom:20px;
 }
-.icon-switzerland{
-  background: url('../../assets/img/icons/icon-switzerland.png');
-}
-.icon-belgium{
-  background: url('../../assets/img/icons/icon-belgium.png');
-}
-.icon-netherlands{
-  background: url('../../assets/img/icons/icon-netherlands.png');
-}
-.icon-luxemburg{
-  background: url('../../assets/img/icons/icon-luxemburg.png');
-}
-.icon-belgium{
-  background: url('../../assets/img/icons/icon-belgium.png');
-}
-.icon-poland{
-  background: url('../../assets/img/icons/icon-poland.png');
-}
-.icon-italy{
-  background: url('../../assets/img/icons/icon-italy.png');
-}
-.icon-spain{
-  background: url('../../assets/img/icons/icon-spain.png');
-}
-.icon-international{
-  background: url('../../assets/img/icons/icon-international.png');
+#serviceOverview .searchbar input {
+  background: #fff url('../../assets/img/icons/icon-zoom.png') center right no-repeat !important;
 }
 
-
-.loc .open .dropdown-menu {
-  top:auto;
-  bottom:0;
-  z-index:2;
-  padding-bottom:45px;
+.image-wrapper{
+  display:table-row;
+  margin-bottom:10px;
+  margin-top:15px;
 }
-.loc .open .dropdown-toggle {
-  z-index:3;
+.image-wrapper p, .image-wrapper img {
+  display:table-cell;
+  vertical-align:bottom;
 }
-.loc .caret {
-  width:8px;
-  height:10px;
-  display:inline-block;
-  background: url('../../assets/img/icons/lang-arrow.png') no-repeat center center;
-  margin-left:0 !important;
+.image-wrapper img {
+  margin-top: 15px;
 }
-.nav.loc .open a {
-  background-color:transparent;
+.image-wrapper p {
+  padding-bottom:20px;
 }
-.nav.loc a:hover{
-  background:transparent;
+#serviceOverview .grey-panel {
+  margin-bottom:40px;
+  float:left;
 }
-.nav.loc a:hover .caret{
- border: none;
- height:10px;
- padding:0 !important;
+#serviceOverview  h3 {
+  margin-top:0;
+}
+.grey-panel h4 {
+  margin-bottom:20px;
 }
 
-.news a {
-  display:block;
+#side-panel .moreLinks {
+  margin-top:35px;
 }
 
-.loc .dropdown-toggle {
-  margin-top:-5px;
+#serviceOverview h1 {
+  margin-bottom:35px;
 }
+#serviceOverview .additional-links li {
+  margin-bottom:10px;
+}
+#side-panel .grey-panel .moreLinks {
+  margin-top:10px;
+}
+#serviceOverview footer {
+  padding-top:200px;
+}
+#serviceOverview .description {
+  margin-bottom:40px;
+}
+
 
 
 

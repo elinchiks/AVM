@@ -1742,20 +1742,12 @@ input[type="number"]::-webkit-inner-spin-button {
   height: auto;
 }
 
-.form-control:-moz-placeholder {
-  color: #999999;
-}
+input[placeholder] {
+  color: #b4b4b4;
+  font-family: 'AVMMetaOT';
+  font-weight:normal;
+  font-size: 14px;
 
-.form-control::-moz-placeholder {
-  color: #999999;
-}
-
-.form-control:-ms-input-placeholder {
-  color: #999999;
-}
-
-.form-control::-webkit-input-placeholder {
-  color: #999999;
 }
 
 .form-control {
@@ -4405,18 +4397,23 @@ textarea.input-group-sm > .input-group-btn > .btn {
   padding-bottom: 10px;
   line-height: 20px;
   font-size: 20px;
-  padding-left:20px;
+/*  padding-left:20px;*/
 }
 
-@media (max-width: 767px) {
+@media (max-width: 980px) {
   .navbar-nav .open .dropdown-menu {
-    position: static;
+    position: static !important;
     float: none;
     width: auto;
     margin-top: 0;
     background-color: transparent;
     border: 0;
     box-shadow: none;
+    background: #fff;
+    box-shadow: 1px 0 3px rgba(0, 0, 0, 0.5);
+  }
+  .navbar-nav.loc .dropdown-toggle {
+    text-align:center;
   }
   .navbar-nav .open .dropdown-menu > li > a,
   .navbar-nav .open .dropdown-menu .dropdown-header {
@@ -4429,6 +4426,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
   .navbar-nav .open .dropdown-menu > li > a:focus {
     background-image: none;
   }
+
 }
 
 @media (min-width: 768px) {
