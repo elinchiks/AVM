@@ -743,7 +743,7 @@ li.searchbar {
   width:100%;
   overflow:hidden;
   height:100px;
-  margin-top:60px;
+  margin-top:70px;
 }
 .image-block{
       background:  #f8f8f8;
@@ -884,6 +884,98 @@ li.searchbar {
 #serviceOverview footer {
   padding-top:40px;
 }
+
+#serviceOverview  #main-content .moreLinks {
+  position:absolute;
+  top:140px;
+  left:auto;
+  right:20px;
+}
+#serviceOverview  #main-content img {
+  margin-top:10px;
+}
+#serviceOverview .description {
+  margin-top:20px;
+}
+#serviceOverview  #main-content {
+  position:relative;
+}
+
+.simple-list {
+  list-style-type:none;
+  padding-left:0;
+}
+.simple-list li {
+  margin-bottom:20px;
+}
+#serviceOverview .searchbar input {
+  background: #fff url('../../assets/img/icons/icon-zoom.png') center right no-repeat !important;
+}
+
+#serviceOverview .grey-panel, #serviceOverview .white-panel  {
+  margin-bottom:40px;
+  float:left;
+}
+#serviceOverview  h3 {
+  margin-top:0;
+}
+#serviceOverview  .grey-panel h4 {
+  margin-bottom:10px;
+}
+
+
+#serviceOverview h1 {
+  margin-bottom:35px;
+}
+#serviceOverview .additional-links li {
+  margin-bottom:10px;
+}
+#side-panel .grey-panel .moreLinks {
+  margin-top:0;
+}
+#serviceOverview footer {
+  padding-top:90px;
+}
+#serviceOverview .description {
+  margin-bottom:40px;
+}
+#serviceOverview .grey-panel .blue-btn {
+ margin-top: 10px;
+ margin-bottom:20px;
+}
+
+#serviceOverview .grey-panel .blue-btn {
+ margin-top: 10px;
+ margin-bottom:20px;
+}
+#serviceOverview .additional-block {
+  margin-bottom:20px;
+}
+
+#serviceOverview  h3 {
+  font-size: 24px;
+}
+
+#serviceOverview  .input-group.searchbar.small {
+  margin-bottom:20px;
+}
+#serviceOverview .additional-links ul {
+  margin-top:0;
+}
+#serviceOverview .simple-list {
+  line-height:1.2em;
+}
+#serviceOverview .additional-links {
+  line-height:1.2em;
+}
+#serviceOverview .grey-panel p {
+  margin-bottom:5px;
+}
+
+
+
+
+
 
 
 /* Wissendatenbank Page */
@@ -1155,6 +1247,9 @@ li.searchbar {
        width: 100%;
        float:right;
   }
+  #serviceOverview #main-content .moreLinks {
+     left:300px;
+   }
  }
 
  @media screen and (max-width: 1050px) {
@@ -1163,6 +1258,8 @@ li.searchbar {
     width:100%;
     margin-bottom:20px;
  }
+
+
 }
 
 
@@ -1182,6 +1279,8 @@ li.searchbar {
      width: 40%;
      float: none;
    }
+
+
 
 
  }
@@ -1380,6 +1479,8 @@ li.searchbar {
     #side-nav.col-sm-3 {
       overflow:hidden;
     }
+
+    
      
  }
 
@@ -1413,6 +1514,26 @@ li.searchbar {
      padding-bottom: 45px;
      text-align:left;
      }
+
+     #footer-nav a, #footer-nav p {
+       font-size:14px;
+     }
+
+     #footer-nav p {
+      line-height:1.5em;
+     }
+
+.additional-block {
+     background-color: #f5f5f5;
+     padding: 10px 20px;
+
+    }
+.additional-block .blue-btn{
+     margin-top:10px;
+     margin-bottom:10px;
+}
+
+
 
 
  }
@@ -1469,7 +1590,11 @@ li.searchbar {
 
  }
 
-
+ @media (min-width: 768px) {
+   #side-panel {
+     float:right !important;
+   }
+ }
 
 
 
@@ -1634,12 +1759,33 @@ li.searchbar {
 
   #mobile-side-nav {
     display:block;
-    margin-bottom:20px;
+    margin-bottom:30px;
   }
+
 
   .search-header {
     margin-top:20px;
   }
+
+
+   #serviceOverview #main-content .moreLinks {
+    position:relative;
+    top:0;
+    left:0;
+    margin-bottom:40px;
+
+   }
+   #serviceOverview #main-content .description {
+    margin-bottom:15px;
+   }
+  #serviceOverview #main-content,   #serviceOverview #side-panel {
+    padding-right:20px !important;
+  }
+
+  #serviceOverview #side-panel {
+    float:left important;
+  }
+
  }
 
 
@@ -1972,6 +2118,10 @@ li.searchbar {
     width:100%;
  }
 
+ .input-group.searchbar.small {
+    width:100%;
+ }
+
  }
 
 
@@ -2093,62 +2243,12 @@ li.searchbar {
  }
 
 
-.simple-list {
-  list-style-type:none;
-  padding-left:0;
-}
-.simple-list li {
-  margin-bottom:20px;
-}
-#serviceOverview .searchbar input {
-  background: #fff url('../../assets/img/icons/icon-zoom.png') center right no-repeat !important;
-}
 
-.image-wrapper{
-  display:table-row;
-  margin-bottom:10px;
-  margin-top:15px;
-}
-.image-wrapper p, .image-wrapper img {
-  display:table-cell;
-  vertical-align:bottom;
-}
-.image-wrapper img {
-  margin-top: 15px;
-}
-.image-wrapper p {
-  padding-bottom:20px;
-}
-#serviceOverview .grey-panel {
-  margin-bottom:40px;
-  float:left;
-}
-#serviceOverview  h3 {
-  margin-top:0;
-}
-.grey-panel h4 {
-  margin-bottom:20px;
-}
 
-#side-panel .moreLinks {
-  margin-top:35px;
-}
 
-#serviceOverview h1 {
-  margin-bottom:35px;
-}
-#serviceOverview .additional-links li {
-  margin-bottom:10px;
-}
-#side-panel .grey-panel .moreLinks {
-  margin-top:10px;
-}
-#serviceOverview footer {
-  padding-top:200px;
-}
-#serviceOverview .description {
-  margin-bottom:40px;
-}
+
+
+
 
 
 
