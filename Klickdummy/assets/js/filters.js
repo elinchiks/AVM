@@ -168,7 +168,8 @@ jQuery.expr[':'].Contains = function (a, i, m) {
    hardware = a.getAttribute("data-hardware").toUpperCase().indexOf(m[3].toUpperCase())>=0;
     problems = a.getAttribute("data-problems").toUpperCase().indexOf(m[3].toUpperCase())>=0;
     specific = a.getAttribute("data-specific").toUpperCase().indexOf(m[3].toUpperCase())>=0;
-    filterValues = hardware + problems + specific;
+    moreSpecific = a.getAttribute("data-moreSpecific").toUpperCase().indexOf(m[3].toUpperCase())>=0;
+    filterValues = hardware + problems + specific + moreSpecific;
     return (filterValues);
 };
 
@@ -273,6 +274,10 @@ function checkFilterState() {
                                    $( "body" ).data( "dataSpecific", "" );  
                                  
                                    break;
+                                case ('data-moreSpecific'):
+                                    $( "body" ).data( "dataMoreSpecific", "" );  
+                                  
+                                    break;
                                default:
                                   alert("The filter was not triggered");
                            }
@@ -338,6 +343,10 @@ function filters(links){
                    case ('data-specific'):
                       filterValue = $( "body" ).data( "dataProblems");  
                       break;
+                    case ('data-moreSpecific'):
+                       filterValue = $( "body" ).data( "dataSpecific");  
+                       break;
+                   
                   
                }
             }
@@ -357,6 +366,11 @@ function filters(links){
                    $( "body" ).data( "dataSpecific", filterValue );  
                  
                    break;
+
+                case ('data-moreSpecific'):
+                    $( "body" ).data( "dataMoreSpecific", filterValue );  
+                  
+                    break;
                default:
                   alert("The filter was not triggered");
            }
@@ -431,6 +445,8 @@ $(document).ready(function() {
 
 if ($("html").hasClass("mobile")) {
 
+    // Filters appear as pop ups in mobile devices
+
     triggers = $('.filterbar').find('.filter-trigger a');
 
     $(triggers).each(function(i){
@@ -448,6 +464,10 @@ if ($("html").hasClass("mobile")) {
           e.preventDefault();
         });
      });
+
+
+
+
 }
 
 });

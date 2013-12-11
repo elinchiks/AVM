@@ -37,6 +37,19 @@ font-style: normal;
 font-weight: normal;
 src: url("../fonts/AVM-Meta-Opentype/AVMMetaOTCond-Black.otf") format("opentype");
 }
+@font-face {
+font-family: 'AVMMetaOT-CondMedium';
+font-style: normal;
+font-weight: normal;
+src: url("../fonts/AVM-Meta-Opentype/AVMMetaOTCond-Medium.otf") format("opentype");
+}
+
+@font-face {
+font-family: 'AVMMetaOT-CondBold';
+font-style: normal;
+font-weight: normal;
+src: url("../fonts/AVM-Meta-Opentype/AVMMetaOTCond-Bold.otf") format("opentype");
+}
 
 @font-face {
 font-family: 'AVMMetaOT-CondBook';
@@ -44,6 +57,14 @@ font-style: normal;
 font-weight: normal;
 src: url("../fonts/AVM-Meta-Opentype/AVMMetaOTCond-Book.otf") format("opentype");
 }
+@font-face {
+font-family: 'AVMMetaOT-Cond';
+font-style: normal;
+font-weight: normal;
+src: url("../fonts/AVM-Meta-Opentype/AVMMetaOTCond-Normal.otf") format("opentype");
+}
+
+
 
 article,
 aside,
@@ -3679,7 +3700,7 @@ input[type="button"].btn-block {
 }
 
 .input-group.search {
-  width: 82px; 
+  width: 95px; 
   float: left; 
   margin: 2px 0 0 12px;
   position: absolute;
@@ -3688,7 +3709,7 @@ input[type="button"].btn-block {
 
 
 .navbar-right .search input {
- width: 100px;
+ width: 115px;
  -moz-transition: width 0.5s ease-out;
  -webkit-transition: width 0.5s ease-out;
  transition: width 0.5s ease-out;
@@ -3863,11 +3884,11 @@ textarea.input-group-sm > .input-group-btn > .btn {
 
 .sidebar-nav p {
   line-height: 1.3;
-  margin: 0 0 20px 0;
+  margin: 0 0 15px 0;
 }
 
 .sidebar-nav .nav.news {
-  margin: 0 0 11px;
+  margin: 0 0 5px;
 }
 
 .sidebar-nav .nav.news p {
@@ -4166,7 +4187,8 @@ textarea.input-group-sm > .input-group-btn > .btn {
   position: relative;
   z-index: 1000;
   min-height: 50px;
-  margin-bottom: 30px;
+  height:60px;
+  margin-bottom: 35px;
   /*border: 1px solid transparent;*/
 }
 
@@ -4336,7 +4358,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
   padding: 20px 15px 14px 15px;
   font-size: 18px;
   line-height: 20px;
-  margin-right: 46px;
+  margin-right: 56px;
 }
 
 .navbar-brand:hover,
@@ -4402,15 +4424,18 @@ textarea.input-group-sm > .input-group-btn > .btn {
 
 @media (max-width: 980px) {
   .navbar-nav .open .dropdown-menu {
-    position: static !important;
+/*    position: static !important;
     float: none;
-    width: auto;
+    width: auto;*/
     margin-top: 0;
     background-color: transparent;
     border: 0;
     box-shadow: none;
     background: #fff;
     box-shadow: 1px 0 3px rgba(0, 0, 0, 0.5);
+  }
+  #header-nav .navbar-nav .open .dropdown-menu li a {
+    padding:0;
   }
   .navbar-nav.loc .dropdown-toggle {
     text-align:center;
@@ -5582,7 +5607,7 @@ a.list-group-item:focus {
   background: #006ab2; 
   color: #fff; 
   border-radius: 0; 
-  margin-right: 13px; 
+  margin-right: 7px; 
 }
 
 #collapseDiv div { 
@@ -6223,7 +6248,7 @@ body.modal-open,
 
 .carousel.press {
   border-top: 10px solid #f1efef;
-  margin-top: 80px;
+  margin-top: 70px;
 }
 
 .press.press-sm .carousel-inner {
@@ -6479,7 +6504,7 @@ body.modal-open,
 .carousel-indicators {
   position: absolute;
   bottom: 20px;
-  left: 40px;
+  left: 30px;
   z-index: 15;
   width: 60%;
   padding: 0;
