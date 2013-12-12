@@ -208,6 +208,7 @@ if (!jQuery) throw new Error("Bootstrap requires jQuery"); + function (a) {
                 var g = a.camelCase(["scroll", e].join("-"));
                 this.$element.one(a.support.transition.end, a.proxy(f, this)).emulateTransitionEnd(350)[e](this.$element[0][g])
             }
+
         }
     }, b.prototype.hide = function () {
         if (!this.transitioning && this.$element.hasClass("in")) {

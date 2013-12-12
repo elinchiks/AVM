@@ -234,7 +234,9 @@ button[disabled],
 html input[disabled] {
   cursor: default;
 }
-
+input {
+  -webkit-appearance: none !important;
+}
 input[type="checkbox"],
 input[type="radio"] {
   padding: 0;
@@ -1768,8 +1770,13 @@ input[placeholder] {
   font-family: 'AVMMetaOT';
   font-weight:normal;
   font-size: 14px;
+  line-height:30px !important;
+  box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  webkit-box-sizing:border-box;
 
 }
+::-webkit-input-placeholder { padding-top:4px; }
 
 .form-control {
   display: block;
@@ -2460,7 +2467,6 @@ input[type="button"].btn-block {
 
 .glyphicon {
   position: relative;
-  top: 1px;
   display: inline-block;
   font-family: 'Glyphicons Halflings';
   -webkit-font-smoothing: antialiased;
@@ -6318,7 +6324,7 @@ body.modal-open,
 .press.carousel .item ul li h5 {
     max-width: 170px;
     text-align: center;
-    margin:20px auto;
+    margin:20px auto 21px;
 
 }
 
