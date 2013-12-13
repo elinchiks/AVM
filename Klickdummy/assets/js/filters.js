@@ -87,7 +87,7 @@ function pagination(countedResults, storedSearchList) {
     searchList  = storedSearchList;
 
      var $pageNav = $('.search-nav'),
-         show_per_page = 6,
+         show_per_page = 7,
          number_of_items = countedResults, 
          number_of_pages = Math.ceil(number_of_items/show_per_page);
     
