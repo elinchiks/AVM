@@ -3006,3 +3006,38 @@ padding-top:5px;
 .tablet .item-image {
   padding-left:15px;
 }
+
+
+
+
+#products-list.displayed{
+  display:block;
+  position:absolute;
+  width:100%;
+  height:auto;
+  z-index:3;
+  top:60px;
+  background:#f8f8f8;
+}
+#products-list.displayed .dropdown-menu {
+  display:block;
+  position:relative;
+  box-shadow:none;
+}
+#products-list.displayed .dropdown-menu ul{
+   list-style: none;
+}
+#products-list.displayed .dropdown-menu li > a {
+  font-size:13px;
+  color:#404040;
+  font-family: "AVMMetaOT-Book";
+}
+
+ @media screen and (max-width: 767px) {
+#products-list.displayed {
+  display:none;
+}
+#products-list.displayed .dropdown-menu {
+  display:none;
+}
+}

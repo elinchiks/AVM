@@ -46,70 +46,7 @@
                 </div>
               </form>                
             </li>
-            <li class="active dropdown flyout web-nav"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Produkte</a>
-              <ul class="dropdown-menu">
-                <li class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-                  <ul>
-                    <li class="dropdown-header"><h3><a href="#">FRITZ!Box</a></h3></li>
-                    <li><a href="productOverview.html">FRITZ!Box 7390</a></li>
-                    <li><a href="productOverview.html">FRITZ!Box 7360</a></li>
-                    <li><a href="productOverview.html">FRITZ!Box 7330</a></li>
-                    <li><a href="productOverview.html">FRITZ!Box 3390</a></li>
-                    <li><a href="productOverview.html">FRITZ!Box 3370</a></li>
-                    <li><a href="productOverview.html">FRITZ!Box 3390</a></li>
-                    <li><a href="productOverview.html">FRITZ!Box 3370</a></li>
-                    <li><a href="productOverview.html">FRITZ!Box 6360 Cable</a></li>
-                    <li><a href="productOverview.html">FRITZ!Box 6340 Cable</a></li>
-                    <li><a href="productOverview.html">FRITZ!Box 6842 LTE</a></li>
-                    <li><a href="productOverview.html">FRITZ!Box 6842 LTE</a></li>
-                    <li><a href="productOverview.html">FRITZ!Box 6840 LTE</a></li>
-                  </ul>
-                </li>
-                  
-                <li class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-                  <ul>
-                    <li class="dropdown-header"><h3><a href="#">FRITZ!Fon</a></h3></li>
-                    <li><a href="#">FRITZ!Fon MT-F</a></li>
-                    <li><a href="#">FRITZ!Fon C3</a></li>
-                    <li><a href="#">FRITZ!Fon M2</a></li>
-                    <li class="dropdown-header"><h3><a href="#">Apps</a></h3></li>
-                    <li><a href="#">MyFRITZ!App</a></li>
-                    <li><a href="#">MyFRITZ!Fon</a></li>
-                    <li><a href="#">MyFRITZ!App</a></li>
-                    <li><a href="#">MyFRITZ!Fon</a></li>
-                  </ul>
-                </li>
-
-                <li class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-                  <ul>
-                    <li class="dropdown-header"><h3><a href="#">FRITZ!Powerline</a></h3></li>
-                    <li><a href="#">FRITZ!Powerline 546E</a></li>
-                    <li><a href="#">FRITZ!Powerline 546E</a></li>
-                    <li><a href="#">FRITZ!Powerline 546E</a></li>
-                    <li><a href="#">FRITZ!Powerline 546E</a></li>
-                    <li class="dropdown-header"><h3><a href="#">DECT</a></h3></li>
-                    <li><a href="#">FRITZ!WLAN Repeater 310</a></li>
-                    <li><a href="#">FRITZ!WLAN Repeater 310</a></li>
-                    <li><a href="#">FRITZ!WLAN Repeater N/G</a></li>
-                  </ul>
-                </li>
-
-                <li class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-                  <ul>
-                    <li class="dropdown-header"><h3><a href="#">FRITZ!WLAN</a></h3></li>
-                    <li><a href="#">FRITZ!WLAN Repeater 310</a></li>
-                    <li><a href="#">FRITZ!WLAN Repeater 310</a></li>
-                    <li><a href="#">FRITZ!WLAN Repeater N/G</a></li>
-                    <li><a href="#">FRITZ!WLAN Repeater 310</a></li>
-                    <li><a href="#">FRITZ!WLAN Repeater 300E</a></li>
-                    <li class="dropdown-header"><h3><a href="#">Weitere Produkte</a></h3></li>
-                    <li><a href="#">FRITZ!Powerline 546E</a></li>
-                    <li><a href="#">FRITZ!Powerline 546E</a></li>
-                    <li><a href="#">FRITZ!WLAN Repeater 310</a></li>
-                  </ul>
-                </li>
-              </ul>
-
+            <li class="active dropdown flyout web-nav"><a id="products-list-toggle" href="#" class="dropdown-toggle" data-toggle="#products-list">Produkte</a>
             </li>
             <li class="active mobile-nav"><a href="#">Produkte</a>
             <li><a href="service.html">Service</a></li>
@@ -130,7 +67,72 @@
 
       </div><!--/.container-->
     </div>
+    <div id="products-list">
+     <div class="container">
+      <ul class="dropdown-menu">
+        <li class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+          <ul>
+            <li class="dropdown-header"><h3><a href="#">FRITZ!Box</a></h3></li>
+            <li><a href="productOverview.html">FRITZ!Box 7390</a></li>
+            <li><a href="productOverview.html">FRITZ!Box 7360</a></li>
+            <li><a href="productOverview.html">FRITZ!Box 7330</a></li>
+            <li><a href="productOverview.html">FRITZ!Box 3390</a></li>
+            <li><a href="productOverview.html">FRITZ!Box 3370</a></li>
+            <li><a href="productOverview.html">FRITZ!Box 3390</a></li>
+            <li><a href="productOverview.html">FRITZ!Box 3370</a></li>
+            <li><a href="productOverview.html">FRITZ!Box 6360 Cable</a></li>
+            <li><a href="productOverview.html">FRITZ!Box 6340 Cable</a></li>
+            <li><a href="productOverview.html">FRITZ!Box 6842 LTE</a></li>
+            <li><a href="productOverview.html">FRITZ!Box 6842 LTE</a></li>
+            <li><a href="productOverview.html">FRITZ!Box 6840 LTE</a></li>
+          </ul>
+        </li>
+          
+        <li class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+          <ul>
+            <li class="dropdown-header"><h3><a href="#">FRITZ!Fon</a></h3></li>
+            <li><a href="#">FRITZ!Fon MT-F</a></li>
+            <li><a href="#">FRITZ!Fon C3</a></li>
+            <li><a href="#">FRITZ!Fon M2</a></li>
+            <li class="dropdown-header"><h3><a href="#">Apps</a></h3></li>
+            <li><a href="#">MyFRITZ!App</a></li>
+            <li><a href="#">MyFRITZ!Fon</a></li>
+            <li><a href="#">MyFRITZ!App</a></li>
+            <li><a href="#">MyFRITZ!Fon</a></li>
+          </ul>
+        </li>
 
+        <li class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+          <ul>
+            <li class="dropdown-header"><h3><a href="#">FRITZ!Powerline</a></h3></li>
+            <li><a href="#">FRITZ!Powerline 546E</a></li>
+            <li><a href="#">FRITZ!Powerline 546E</a></li>
+            <li><a href="#">FRITZ!Powerline 546E</a></li>
+            <li><a href="#">FRITZ!Powerline 546E</a></li>
+            <li class="dropdown-header"><h3><a href="#">DECT</a></h3></li>
+            <li><a href="#">FRITZ!WLAN Repeater 310</a></li>
+            <li><a href="#">FRITZ!WLAN Repeater 310</a></li>
+            <li><a href="#">FRITZ!WLAN Repeater N/G</a></li>
+          </ul>
+        </li>
+
+        <li class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+          <ul>
+            <li class="dropdown-header"><h3><a href="#">FRITZ!WLAN</a></h3></li>
+            <li><a href="#">FRITZ!WLAN Repeater 310</a></li>
+            <li><a href="#">FRITZ!WLAN Repeater 310</a></li>
+            <li><a href="#">FRITZ!WLAN Repeater N/G</a></li>
+            <li><a href="#">FRITZ!WLAN Repeater 310</a></li>
+            <li><a href="#">FRITZ!WLAN Repeater 300E</a></li>
+            <li class="dropdown-header"><h3><a href="#">Weitere Produkte</a></h3></li>
+            <li><a href="#">FRITZ!Powerline 546E</a></li>
+            <li><a href="#">FRITZ!Powerline 546E</a></li>
+            <li><a href="#">FRITZ!WLAN Repeater 310</a></li>
+          </ul>
+        </li>
+      </ul>
+     </div>
+    </div>
 
     <div class="container">
       <div class="row">
@@ -264,6 +266,9 @@
     <script>
       $(document).ready(function() {  
            $('body').removeClass('no-js');
+           $('#products-list-toggle').on('click', function(){
+              $($(this).attr("data-toggle")).toggleClass("displayed");
+           });
       });  
     </script>
   </body>
