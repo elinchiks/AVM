@@ -416,7 +416,7 @@ li.searchbar {
    background: transparent url('../../assets/img/icons/jetztkaufen.png') no-repeat;
  }
 
- a:hover.icon-buy {
+ a:hover.icon-buy , a:active.icon-buy{
    background-image: transparent url('../../assets/img/icons/jetztkaufen.png');
    background-position:  0 -23px;
  }
@@ -1086,7 +1086,7 @@ li.searchbar {
    }
 
    #sub-nav {
-    padding-top:27px;
+    padding-top:21px;
    }
 
   #sub-nav p {
@@ -2540,7 +2540,6 @@ padding-top:5px;
        width:70% !important;
        float:left;
        text-align:left;
-       padding-top:5px;
    }
 
     #buy-button.col-xs-12 {
@@ -2575,9 +2574,6 @@ padding-top:5px;
   }
   #support {
     height:200px;
-  }
-  #product-overview .top-nav #buy-button {
-    padding-top:0;
   }
 
   #service .dropdown-flayout-wrapper-small {
@@ -2855,9 +2851,9 @@ padding-top:5px;
      float:left;
    }
 
-   a:hover.icon-buy.top {
-     background-image: url('../../assets/img/icons/einkaufswagen.png');
-     background-position: 0 -26px;
+   a:hover.icon-buy.top ,    a:active.icon-buy.top{
+
+     background-position: 0 -26px !important;
    }
 
    .press.carousel .thumbnails li , .press.press-sm.carousel .item ul li {
@@ -3018,19 +3014,33 @@ padding-top:5px;
   z-index:3;
   top:60px;
   background:#f8f8f8;
+  box-shadow:0 2px 2px #d9d9d9;
 }
 #products-list.displayed .dropdown-menu {
   display:block;
   position:relative;
   box-shadow:none;
+  padding-bottom:40px;
+  width:100% !important;
 }
 #products-list.displayed .dropdown-menu ul{
    list-style: none;
 }
+#products-list.displayed .dropdown-menu .dropdown-header{
+   padding:0 !important;
+   padding-top:10px !important;
+}
+#products-list.displayed .dropdown-menu h3{
+  font-weight:500;
+}
+#products-list.displayed .dropdown-menu > li > ul:first-child, #products-list.displayed .dropdown-menu > ul > li:first-child, #products-list.displayed .dropdown-menu > li:first-child {
+   padding-left:0 !important;
+}
 #products-list.displayed .dropdown-menu li > a {
   font-size:13px;
   color:#404040;
-  font-family: "AVMMetaOT-Book";
+  font-family: "AVMMetaOT";
+  font-weight:normal;
 }
 
  @media screen and (max-width: 767px) {
