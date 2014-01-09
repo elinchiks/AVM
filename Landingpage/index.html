@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<!--[if IE]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script> 
+	<script>!window.jQuery && document.write('<script src="/js/jquery-1.6.1.min.js"><\/script>')</script>
+	<script src="js/main.js"></script>
+	<script src="js/javascript-video-scrubber.js"></script>
+</head>
+
+<body>
+	
+	<header id="header">
+		<div class="logo"></div>
+		<div class="model-name">FRITZ!Box 7490 </div>
+	</header>
+	<nav id="primary">
+		<ul>
+			<li>
+				<h5>Intro</h5>
+				<a class="intro" href="#intro">View</a>
+			</li>
+			<li>
+				<h5>Internet</h5>
+				<a class="internet" href="#internet">View</a>
+			</li>
+			<li>
+				<h5>WLAN</h5>
+				<a class="wlan" href="#wlan">View</a>
+			</li>
+			<li>
+				<h5>USB 3.0</h5>
+				<a class="usb" href="#usb">View</a>
+			</li>
+			<li>
+				<h5>Heimnetz / Telefonie</h5>
+				<a class="lan" href="#lan">View</a>
+			</li>
+			<li>
+				<h5>FRITZ!OS 6.0</h5>
+				<a class="os" href="#os">View</a>
+			</li>
+			<li>
+				<h5>Auszeichnungen </h5>
+				<a class="auszeichnungen" href="#auszeichnungen">View</a>
+			</li>
+		</ul>
+	</nav>
+	<div id="viewport" class="section-intro">
+		<div id="image-line" >
+
+			<!-- overlay grid pattern (optional) -->
+			<div id="overlay"></div>
+
+			<!-- placeholder image for video (required) -->
+			<img id="video" src="./frames/image_000000.jpg" alt="" />
+
+			<!-- preload the video frames (required) -->
+			<script type="text/javascript">
+				<!--//
+				// image filenames in frames folder should be "image_000000.jpg" through "image_000098.jpg"
+
+
+
+				for(i = 0; i < totalFrames; i++) { // loop for each image in sequence
+					images[i] =  new Image(); // add image object to array
+					images[i].src = "./frames/comp_"+pad(i, 4)+".png"; // set the source of the image object
+				}
+				//-->
+			</script>
+		</div>
+
+	</div>
+	<div id="content">
+	<article id="intro" >
+
+		<div class="container">
+			<h1>FRITZ!BOX 7490</h1>
+			<h3>Die schnellste FRITZ!Box aller Zeiten</h3>
+		<!-- 	<div class="img-wrapper">
+				<img src="images/intro.png" alt="">
+			</div>	 -->
+				
+			<p class="description">Spektakuläre kabellose Geschwindigkeiten sowie bedeutend mehr Reichweite im gesamten Heimnetz mit dem neuen und ultraschnellen WLAN AC. Rasantes VDSL,blitzschnelles Gigabit-LAN und leistungsfähige USB-Anschlüsse machen das High-Speed-Netzwerk perfekt. Mit Mediaserver, integrierter Telefonanlage inklusive DECT-Basis sowie Anrufbeantworter und Faxfunktion werden alle Kommunikationswünsche erfüllt.</p>
+			<span class="arrow"></span>
+		</div>
+	
+	</article>
+	<article id="internet" >
+		<div class="parallax-section">
+		</div>
+		<div class="container">
+			<h2>Highspeed Internet mit VDSL und ADSL+</h2>
+			<div class="product-facts">
+			<ul class="feature-list">
+				<li>Vectoring-Unterstützung</li>
+				<li>High-Performance-Routing</li>
+				<li>zukunftssicher</li>
+			</ul>
+			<div class="main-feature">
+				Bis zu
+				<strong>100 MBit/s</strong>
+				VDSL untd ADSL+
+			</div>
+			</div>
+		<!-- 	<div class="img-wrapper">
+				<img src="images/internet.png" alt="">
+			</div> -->
+			<p class="description">Ihre FRITZ!Box ist schon jetzt für den nächsten Technologiesprung und Geschwindigkeitsschub bei VDSL vorbereitet. Die FRITZ!Box 7490 nutzt die schnelle Vectoring-Technologie für Höchstgeschwindigkeiten von bis zu 100 MBit/s.Mit High-Performance-Routing ist die  FRITZ!Box 7490 auch am Kabelmodem oder Glasfaser-Anschluss einsatzfähig.</p>
+		</div>	
+
+	</article>
+	<article id="wlan">
+		<div class="parallax-section">
+		</div>
+		<div class="container">
+			<h4>Dreifach Tempo-Sprung</h4>
+			<h2>Ultraschnelles Heimnetz mit WLAN AC</h2>
+			<div class="main-feature">
+			<dl>
+				<dt>WLAN</dt>
+				<dd><strong>500 MBit/s</strong></dd>
+			</dl>
+			<dl>
+				<dt>WLAN AC</dt>
+				<dd><strong>1300 MBit/s</strong> WLAN AC bis zu 3x schneller</dd>
+			</dl>
+			</div>
+			<ul class="feature-list">
+			<li>
+				<dl>
+					<dt>Spektakuläre Gigabit-Geschwindigkeit</dt>
+					<dd>WLAN AC + N gleichzeitig nutzen.</dd>
+				</dl>
+			</li>
+			<li>
+				<dl>
+					<dt>Ideal für mehrere Geräte</dt>
+					<dd>Exzellente Erreichbarkeit durch t3 unabhängige Datenströme.</dd>
+				</dl>
+			</li>
+			<li>
+				<dl>
+					<dt>Mehr Reichweite</dt>
+					<dd>Hohe Datendurchsätze auch in größeren Entfernungen.</dd>
+				</dl>
+			</li>
+			</ul>
+		<!-- 	<div class="img-wrapper">
+				<img src="images/wlan.png" alt="">
+			</div> -->
+		</div>
+	</article>
+	<article id="usb" >
+		<div class="parallax-section">
+		</div>
+		<div class="container">
+			<h2>Schneller im Heimnetz mit USB 3.0</h2>
+			<div class="main-features">
+				<h3>Bis zu <strong>3x schneller</strong></h3>
+				<ul>
+					<li>USB 3.0 USB 3.0 Bis zu 5000 MBit/s </li>
+					<li>
+						<div class="white-bars">
+							<b class="bar-1"></b>
+							<b class="bar-2"></b>
+							<b class="bar-3"></b>
+							<b class="bar-4"></b>
+
+							<b class="bar-5"></b>
+							<b class="bar-6"></b>
+							<b class="bar-7"></b>
+							<b class="bar-8"></b>
+
+							<b class="bar-9"></b>
+							<b class="bar-10"></b>
+							<b class="bar-11"></b>
+							<b class="bar-12"></b>
+
+							<b class="bar-13"></b>
+							<b class="bar-14"></b>
+							<b class="bar-15"></b>
+							<b class="bar-16"></b>
+
+							<b class="bar-17"></b>
+							<b class="bar-18"></b>
+							<b class="bar-19"></b>
+							<b class="bar-20"></b>
+
+							<b class="bar-21"></b>
+							<b class="bar-22"></b>
+							<b class="bar-23"></b>
+							<b class="bar-24"></b>
+
+							<b class="bar-25"></b>
+							<b class="bar-26"></b>
+							<b class="bar-27"></b>
+							<b class="bar-28"></b>
+
+							<b class="bar-29"></b>
+							<b class="bar-30"></b>
+							<b class="bar-31"></b>
+							<b class="bar-32"></b>
+
+							<b class="bar-33"></b>
+							<b class="bar-34"></b>
+							<b class="bar-35"></b>
+							<b class="bar-36"></b>
+						</div>
+					</li>
+					<li>
+						<div class="blue-bars">
+							<b class="bar-1"></b>
+							<b class="bar-2"></b>
+							<b class="bar-3"></b>
+							<b class="bar-4"></b>
+
+							<b class="bar-5"></b>
+							<b class="bar-6"></b>
+							<b class="bar-7"></b>
+							<b class="bar-8"></b>
+
+							<b class="bar-9"></b>
+							<b class="bar-10"></b>
+							<b class="bar-11"></b>
+							<b class="bar-12"></b>
+						</div>
+					</li>
+					<li>
+						
+					</li>
+					<li>USB 2.0</li>
+				</ul>
+			</div>
+			<!-- <div class="img-wrapper">
+				<img src="images/usb.png" alt="">
+			</div> -->
+			<p class="description">Zwei leistungsfähige USB 3.0 / 2.0-Anschlüsse für Drucker,Speicher, UMTS-Stick sowie Stick & Surf machen das High-Speed-Netzwerk perfekt.</p>
+	
+		</div>
+
+		<!-- <div id="rotator"></div>
+	
+		<script type="text/javascript">
+		$(function() {
+
+		    var rotator = $('#rotator');
+		    var container = $('#usb');
+		    var viewport = $(window);
+
+		    var images = 72;
+		    var imageHeight = 30000 / images;
+		    var scrollHeight = container.height() - viewport.height() + imageHeight;
+		    var step = images / scrollHeight;
+
+		    viewport.stop().scroll(function(event) {
+
+		        var x = -Math.floor(step * (viewport.scrollTop() - container.offset().top)) * imageHeight * 2;
+		        rotator.css('background-position', x + 'px 0');
+
+		    });
+
+		});
+		</script> -->
+
+
+
+
+
+
+	</article>
+	<article id="lan" >
+		<div class="parallax-section">
+		</div>
+		<div class="container">
+			<h2>Gigabit LAN und Telefonanlage</h2>
+			<ul class="feature-list">
+				<li>
+					<dl>
+						<dt>Telefon</dt>
+						<dd>analoges Telefon, Anrufbeantworter, Fax</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt>DECT</dt>
+						<dd>FRITZ!Fon oder andere DECTTelefone</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt>2x analog</dt>
+						<dd>analoges Telefon, Anrufbeantworter, Fax</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt>ISDN</dt>
+						<dd>Telefon, Telefonanlage</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt>4 x Gigabit LAN</dt>
+						<dd>LAN, 1 GBit/s, PC,Spielekonsole, Netzwerk</dd>
+					</dl>
+				</li>
+			</ul>
+		<!-- 	<div class="img-wrapper">
+				<img src="images/lan.png" alt="">
+			</div> -->
+			<p class="description">Das blitzschnelle Gigabit-LAN macht das High-Speed-Netzwerk perfekt. Die integrierte Telefonanlage inklusive DECT-Basis, Anrufbeantworter undFaxfunktion erfüllt alle Kommunikationswünsche. Der leistungsstarke Mediaserver streamt Bilder, Filme und Musik im gesamten Heimnetz, lokal oder aus der Cloud.</p>
+		</div>
+	</article>
+	<article id="os">
+		<div class="parallax-section">
+		</div>
+		<div class="container">
+			<h2>FRITZ!OS 6.0</h2>
+			<p class="description">Die FRITZ!Box 7490 ist bereits mit den vielfältigen Funktionen des neuen FRITZ!OS 6.0 ausgestattet – für noch mehr Leistung und Komfort am DSL- und Kabel-Anschluss. So wird die FRITZ!Box zur perfekten Zentrale für ihr Smart Home.</p>
+			<ul class="feature-list">
+				<li>
+					<dl>
+						<dt>WLAN-Hotspot</dt>
+						<dd>Privater Hotspot für Ihre Gästet</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt>Live TV</dt>
+						<dd>IP-TV drahtlos an mehrere Geräte streamen</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt>Schnellstes VDSL</dt>
+						<dd>Schon jetzt für den nächsten Technologiesprung vorbereitet</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt>Schnellstes VDSL</dt>
+						<dd>Schon jetzt für den nächsten Technologiesprung vorbereitet</dd>
+					</dl>
+				</li>
+			</ul>
+			<ul class="feature-list">
+				<li>
+					<dl>
+						<dt>Smart Home</dt>
+						<dd>Komfort für MyFRITZ!, Kindersicherung und Smart Home</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt>Telefonie</dt>
+						<dd>Neues für Telefone, Gegensprechanlagen und Anlagenanschlüsse</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt>Mediaserver</dt>
+						<dd>Mediaserver und neue Cloud Servicese</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt>VPN</dt>
+						<dd>Schneller und einfacherer Aufbau eines VPN</dd>
+					</dl>
+				</li>
+			</ul>
+	<!-- 		<div class="img-wrapper">
+				<img src="images/os.png" alt="">
+			</div> -->
+		</div>
+	</article>
+	<article id="auszeichnungen" >
+		<div class="parallax-section">
+		</div>
+		<div class="container">
+			<h2>Erleben Sie jetzt rasante Geschwindigkeiten im Heimnetz mit der FRITZ!BOX 7490</h2>
+			<button>Jetzt mehr erfahren > </button>
+			<button>Online kaufen</button>
+	<!-- 		<div class="img-wrapper">
+				<img src="images/os.png" alt="">
+			</div> -->
+		</div>
+
+	</article>
+	</div>
+
+
+
+</body>
+</html>

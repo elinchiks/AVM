@@ -1,0 +1,313 @@
+@import 'normalize.less';
+@font-face {
+	font-family: 'AVMMetaOT';
+	font-style: normal;
+	font-weight: normal;
+	src: url("../fonts/AVM-Meta-Opentype/AVMMetaOT-Normal.otf") format("opentype");
+}
+
+@font-face {
+	font-family: 'AVMMetaOT-BookBold';
+	font-style: normal;
+	font-weight: normal;
+	src: url("../fonts/AVM-Meta-Opentype/AVMMetaOT-Bold.otf") format("opentype");
+}
+
+@font-face {
+	font-family: 'AVMMetaOT-Book';
+	font-style: normal;
+	font-weight: normal;
+	src: url("../fonts/AVM-Meta-Opentype/AVMMetaOT-Book.otf") format("opentype");
+}
+
+@font-face {
+	font-family: 'AVMMetaOT-CondBlack';
+	font-style: normal;
+	font-weight: normal;
+	src: url("../fonts/AVM-Meta-Opentype/AVMMetaOTCond-Black.otf") format("opentype");
+}
+@font-face {
+	font-family: 'AVMMetaOT-CondMedium';
+	font-style: normal;
+	font-weight: normal;
+	src: url("../fonts/AVM-Meta-Opentype/AVMMetaOTCond-Medium.otf") format("opentype");
+}
+
+@font-face {
+	font-family: 'AVMMetaOT-CondBold';
+	font-style: normal;
+	font-weight: normal;
+	src: url("../fonts/AVM-Meta-Opentype/AVMMetaOTCond-Bold.otf") format("opentype");
+}
+
+@font-face {
+	font-family: 'AVMMetaOT-CondBook';
+	font-style: normal;
+	font-weight: normal;
+	src: url("../fonts/AVM-Meta-Opentype/AVMMetaOTCond-Book.otf") format("opentype");
+}
+@font-face {
+	font-family: 'AVMMetaOT-Cond';
+	font-style: normal;
+	font-weight: normal;
+	src: url("../fonts/AVM-Meta-Opentype/AVMMetaOTCond-Normal.otf") format("opentype");
+}
+
+body {
+	width:100%;
+	height:100%;
+	position:relative;
+	float:left;
+}
+
+h1, h2, h3, h4 {
+	text-align:center;
+	margin:0;
+	padding:0;
+}
+h1 {
+	font-size: 60px;
+	font-family: 'AVMMetaOT-CondBlack';
+	margin-top:100px;
+}
+h2 {
+	font-size: 54px;
+	font-family: 'AVMMetaOT-CondBlack';
+	margin-top:70px;
+}
+h3 {
+	font-size:36px;
+}
+h5 {
+	font-size: 14px;
+	font-family:'AVMMetaOT-Book';
+	color:#fff;
+}
+article {
+	display:block;
+	min-height:960px;
+	color: #fff;
+	// background:#0865a3;
+	float:left;
+	width:100%;
+	overflow:hidden;
+}
+li {
+	list-style: none;
+}
+.img-wrapper {
+	text-align:center;
+	img {
+		display:inline-block;
+		max-width:100%;
+	}
+}
+.description {
+	text-align:center;
+	font-size: 18px;
+	font-family: 'AVMMetaOT-Book';
+}
+.container {
+	width:940px;
+	margin:0 auto;
+	z-index:3;
+
+}
+
+nav#primary {
+	z-index: 5;
+	position: fixed;
+	top: 100px;
+	left: 40px;
+
+	ul {
+		padding:0;
+	}
+
+	li {
+	position: relative;
+	height: 20px; }
+
+ a {
+	display: block;
+	width: 8px;
+	height:8px;
+	text-indent: -9999px;
+	background: transparent url('../images/nav.png') 0 -8px no-repeat;
+}
+h5{
+	position: absolute;
+	left: 20px;
+	top: -7px;
+	display: none;
+	color: #fff;
+	white-space: nowrap;
+	margin:0;
+	padding:0;
+}
+li.active {
+	a {
+		background: transparent url('../images/nav.png') 0  0 no-repeat;
+	}
+	h5 {
+		display:block !important;
+	}
+
+}
+}
+#header {
+	position:relative;
+	color:#fff;
+	width:100%;
+	z-index:3;
+}
+.logo {
+	background: transparent url('../images/avm.png') no-repeat center center;
+	display:block;
+	position:absolute;
+	top:35px;
+	left:40px;
+	width:48px;
+	height:26px;
+}
+.model-name {
+	font-size: 14px;
+	position:absolute;
+	right:40px;
+	top:45px;
+	display:block;
+	color:#fff;
+}
+.parallax-section {
+	position:absolute;
+	top:0;
+	height:100%;
+	position:absolute;
+	opacity:1 !important;
+	width:100%;
+	height:100%;
+	z-index:1;
+	top:0;
+	background-color:#052b44;
+	background-repeat:no-repeat;
+	background-position: top left;
+	
+}
+#viewport {
+	position:fixed !important;
+	z-index:1;
+	top:0;
+	left:0;
+}
+
+
+#content {
+	position: relative;
+	z-index:2;
+}
+.section-intro {
+		background: #052b44  url('../images/bg-1.jpg') no-repeat top left !important;
+		background-size: cover !important;
+		-webkit-background-size:cover !important;
+		-moz-background-size:cover !important;
+		opacity:1 !important;
+}
+.section-internet {
+
+	background: #052b44  url('../images/bg-2.jpg') no-repeat top left !important;
+	background-size: cover !important;
+	-webkit-background-size:cover !important;
+	-moz-background-size:cover !important;
+	opacity:1 !important;
+
+}
+.section-wlan {
+
+	background: #052b44  url('../images/bg-3.jpg') no-repeat top left !important;
+	background-size: cover !important;
+	-webkit-background-size:cover !important;
+	-moz-background-size:cover !important;
+	opacity:1 !important;
+	background-attachment:fixed !important;
+
+}
+.section-usb {
+	.parallax-section {
+	background: #052b44  url('../images/bg-4.jpg') no-repeat top left !important;
+	background-size: cover !important;
+	-webkit-background-size:cover !important;
+	-moz-background-size:cover !important;
+	opacity:1 !important;
+}
+}
+.section-lan {
+	.parallax-section {
+	background: #052b44  url('../images/bg-5.jpg') no-repeat top left !important;
+	background-size: cover !important;
+	-webkit-background-size:cover !important;
+	-moz-background-size:cover !important;
+	opacity:1 !important;
+	background-attachment:fixed !important;
+}
+}
+.section-os {
+	.parallax-section {
+	background: #052b44  url('../images/bg-6.jpg') no-repeat top left !important;
+	background-size: cover !important;
+	-webkit-background-size:cover !important;
+	-moz-background-size:cover !important;
+	opacity:1 !important;
+}
+}
+.section-auszeichnungen {
+	.parallax-section {
+	background: #052b44  url('../images/bg-7.jpg') no-repeat top left !important;
+	background-size: cover !important;
+	-webkit-background-size:cover !important;
+	-moz-background-size:cover !important;
+	opacity:1 !important;
+	background-attachment:fixed !important;
+}
+}
+
+
+#content {
+	position:absolute;
+	width:100%;
+	height:100%;
+	top:0;
+	left:0;
+	z-index:2;
+	background:transparent;
+}
+article{
+	* {
+		position:relative;
+		opacity:0;
+	}
+	&.active * {
+
+		    // -webkit-transition-delay: 0.s;
+		    transition-duration:1s;
+		    // transition-delay: 1s;
+		    opacity:1;
+		    transition-timing-function:ease-in-out;
+	}
+
+}
+
+img#video {
+
+	z-index:1;
+	width:800px
+	height:430px;
+	max-width:100%;
+}
+.white-bars b, .blue-bars b {
+	width:9px;
+	height:30px;
+	display:inline-block;
+	background: white;
+	margin-right:3px;
+}
+
